@@ -1,11 +1,11 @@
 <?php
    require 'init_db.php';
    $db = new SQLite3('basdat.db');
-   if(!$db) {
-        echo $db->lastErrorMsg();
-     } else {
-        echo "Opened database successfully\n";
-   }
+   // if(!$db) {
+   //      echo $db->lastErrorMsg();
+   //   } else {
+   //      echo "Opened database successfully\n";
+   // }
 
    # insert to users table
 
@@ -19,27 +19,27 @@
     foreach($sql as $que){
         $ret = $db->exec($que);
         if(!$ret){
-            echo $db->lastErrorMsg();
+            // echo $db->lastErrorMsg();
          } else {
-            echo "users Table updated successfully\n";
+            // echo "users Table updated successfully\n";
          }
     }
 
     # insert to dorayaki table
 
     $sql =[
-      "INSERT INTO `dorayaki` VALUES (1, 'dorayaki1', 20000, 50, 'ini dorayaki 1', 'img1.jpg');",
-      "INSERT INTO `dorayaki` VALUES (2, 'dorayaki2', 30000, 60, 'ini dorayaki 2', 'img2.jpg');",
-      "INSERT INTO `dorayaki` VALUES (3, 'dorayaki3', 40000, 70, 'ini dorayaki 3', 'img3.jpg');",
-      "INSERT INTO `dorayaki` VALUES (4, 'dorayaki4', 50000, 80, 'ini dorayaki 4', 'img4.jpg');"
+      "INSERT INTO `dorayaki` VALUES (1, 'dorayaki1', 20000, 50, 'ini dorayaki 1', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (2, 'dorayaki2', 30000, 60, 'ini dorayaki 2', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (3, 'dorayaki3', 40000, 100, 'ini dorayaki 3', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (4, 'dorayaki4', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');"
    ];
 
    foreach($sql as $que){
       $ret = $db->exec($que);
       if(!$ret){
-          echo $db->lastErrorMsg();
+         //  echo $db->lastErrorMsg();
        } else {
-          echo "users dorayaki updated successfully\n";
+         //  echo "users dorayaki updated successfully\n";
        }
    }
 
@@ -47,17 +47,20 @@
 
    $sql =[
       "INSERT INTO `transactions` VALUES (1, 'shev', 1, 2,40000);",
-      "INSERT INTO `transactions` VALUES (2, 'fik', 2, 2,60000);",
-      "INSERT INTO `transactions` VALUES (3, 'yah', 3, 2,80000);",
+      "INSERT INTO `transactions` VALUES (2, 'fik', 2, 3,90000);",
+      "INSERT INTO `transactions` VALUES (3, 'yah', 3, 4,160000);",
+      "INSERT INTO `transactions` VALUES (NULL, 'fik', 3, 10,400000);",
+      "INSERT INTO `transactions` VALUES (NULL, 'shev', 2, 6,180000);",
+      "INSERT INTO `transactions` VALUES (NULL, 'yah', 3, 4,160000);",
    ];
 
    foreach($sql as $que){
       $ret = $db->exec($que);
-      if(!$ret){
-          echo $db->lastErrorMsg();
-       } else {
-          echo "users transactions updated successfully\n";
-       }
+      // if(!$ret){
+      //     echo $db->lastErrorMsg();
+      //  } else {
+      //     echo "users transactions updated successfully\n";
+      //  }
    }
 
 
@@ -70,7 +73,7 @@
          array_push($data,$res);
       }
 
-      print_r($data);
+      // print_r($data);
 
       return $data;
    }
@@ -79,12 +82,20 @@
    $dorayaki = select_all('dorayaki',$db);
    $transactions = select_all('transactions',$db);
 
-   print_r($users);
-   print_r($dorayaki);
-   print_r($transactions);
-    
+   // print_r($users);
+   // print_r($dorayaki);
+   // print_r($transactions);
 
+   // $sql = "SELECT id_dorayaki, sum(total_buy) as total from transactions group by id_dorayaki order by total desc";
+   // $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
+   // $data = [];
+   // $results = $db->query($sql);
+   // while ($res = $results->fetchArray(1)){
+   //       array_push($data,$res);
+   // }
 
-    $db->close();
+   // print_r($data);
+
+   $db->close();
      // Nanti tambahin tabel lain
 ?>
