@@ -1,5 +1,5 @@
 <?php
-    $db = new SQLite3('basdat.db');
+    $db = new SQLite3('./basdat.db');
    //  if(!$db) {
    //      echo $db->lastErrorMsg();
    //   } else {
