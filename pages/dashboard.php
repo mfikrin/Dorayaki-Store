@@ -1,6 +1,6 @@
 <?php
     $_SESSION["username"] = "Fikri";
-    require '../db/init_sample.php';
+    // require '../db/init_sample.php';
     $db = new SQLite3('../db/basdat.db');
 
     $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,amount,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
@@ -28,18 +28,7 @@
 </head>
 
 <body>
-    <header>
-            <h1>MO<span style="color:rgb(55, 141, 180)">BI</span>TAA</h1>  <!-- mobita bisa diganti nanti -->
-            <nav>
-                <ul>
-                    <li><a href="dashboard.html">Home</a></li>
-                    <li><a href="">Purchase List</a></li>
-                    <li><a href="">Logout</a></li>
-                    <li><div class = "nama"><?php echo $_SESSION["username"] ?></div></li>
-                </ul>
-            </nav>
-    </header>
-
+    <?php include('../util/header.php'); ?>
     <div class = "container">
             <?php foreach ($dorayakis as $dorayaki) : ?>
             <div class="book-box">

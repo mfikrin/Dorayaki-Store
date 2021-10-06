@@ -3,14 +3,13 @@
     padding: 0;
     margin: 0;
 }
-
 /* top bar */
 
 header{
     overflow: hidden;
     width: 100%;
     height: 70px;
-    background-color: #282828;
+    background-color: #072f5f;
     justify-content: space-between;
     
 }
@@ -21,10 +20,17 @@ header h1{
     float: left;
     margin-left: 2%;
     margin-top: 10px;
-    color:rgb(51, 182, 95);
+    color:#009dff;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.webname:hover{
+    color: white;
+}
+
+.webname{
+    color: inherit;
+}
 header ul{
     width: auto;
     float: right;
@@ -47,6 +53,10 @@ header a{
     font-weight: bold;
 }
 
+.barlink:hover{
+    color :#f2aa4cff;
+}
+
 .search-bar{
     position: relative;
     left: 50%;
@@ -55,7 +65,7 @@ header a{
 
 .nama{
     text-align: center;
-    color:rgb(51, 182, 95);
+    color:#C4161C;
     text-decoration: none;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
@@ -78,7 +88,6 @@ header a{
         overflow: hidden;
         width: 100%;
         height: 100%;
-        background-color: #282828;
         justify-content: space-between;
         
     }
@@ -99,7 +108,3 @@ header a{
   }
 
 /* endtop bar */
-
-body{
-    background-color: gray;
-}

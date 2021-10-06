@@ -28,10 +28,10 @@
     # insert to dorayaki table
 
     $sql =[
-      "INSERT INTO `dorayaki` VALUES (1, 'dorayaki1', 20000, 50, 'ini dorayaki 1', 'img/dorayaki.png');",
-      "INSERT INTO `dorayaki` VALUES (2, 'dorayaki2', 30000, 60, 'ini dorayaki 2', 'img/dorayaki.png');",
-      "INSERT INTO `dorayaki` VALUES (3, 'dorayaki3', 40000, 100, 'ini dorayaki 3', 'img/dorayaki.png');",
-      "INSERT INTO `dorayaki` VALUES (4, 'dorayaki4', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');"
+      "INSERT INTO `dorayaki` VALUES (0, 'dorayaki1', 20000, 50, 'ini dorayaki 1', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (1, 'dorayaki2', 30000, 60, 'ini dorayaki 2', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (2, 'dorayaki3', 40000, 100, 'ini dorayaki 3', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (3, 'dorayaki4', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');"
    ];
 
    foreach($sql as $que){
@@ -46,12 +46,12 @@
    # insert to transactions table
 
    $sql =[
-      "INSERT INTO `transactions` VALUES (1, 'shev', 1, 2,40000);",
-      "INSERT INTO `transactions` VALUES (2, 'fik', 2, 3,90000);",
-      "INSERT INTO `transactions` VALUES (3, 'yah', 3, 4,160000);",
-      "INSERT INTO `transactions` VALUES (NULL, 'fik', 3, 10,400000);",
-      "INSERT INTO `transactions` VALUES (NULL, 'shev', 2, 6,180000);",
-      "INSERT INTO `transactions` VALUES (NULL, 'yah', 3, 4,160000);",
+      "INSERT INTO `transactions` VALUES (0, 'shev', 0, 2,40000);",
+      "INSERT INTO `transactions` VALUES (1, 'fik', 1, 3,90000);",
+      "INSERT INTO `transactions` VALUES (2, 'yah', 2, 4,160000);",
+      "INSERT INTO `transactions` VALUES (3, 'fik', 0, 10,400000);",
+      "INSERT INTO `transactions` VALUES (4, 'shev', 1, 6,180000);",
+      "INSERT INTO `transactions` VALUES (5, 'yah', 2, 4,160000);",
    ];
 
    foreach($sql as $que){
