@@ -52,10 +52,10 @@
 
      $sql ="
         CREATE TABLE dorayaki(
-            id_dorayaki INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            id_dorayaki INTEGER PRIMARY KEY AUTOINCREMENT,
             nama VARCHAR(100) UNIQUE NOT NULL,
-            price INT NOT NULL,
-            amount INT NOT NULL,
+            price INTEGER NOT NULL,
+            amount INTEGER NOT NULL,
             description VARCHAR(100) NOT NULL,
             img_source VARCHAR(255) NOT NULL
         )";
@@ -71,11 +71,11 @@
 
      $sql ="
         CREATE TABLE transactions(
-            id_transaksi INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            id_transaksi INTEGER PRIMARY KEY AUTOINCREMENT,
             username VARCHAR(100),
-            id_dorayaki INT UNSIGNED,
-            total_buy INT NOT NULL,
-            total_price INT NOT NULL,
+            id_dorayaki INTEGER,
+            total_buy INTEGER NOT NULL,
+            total_price INTEGER NOT NULL,
             FOREIGN KEY (username) REFERENCES users(username) on update cascade on delete cascade,
             FOREIGN KEY (id_dorayaki) REFERENCES dorayaki(id_dorayaki) on update cascade on delete cascade
         )";

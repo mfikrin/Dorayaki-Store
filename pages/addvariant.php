@@ -32,17 +32,25 @@ function submitImg()
             }
 
             if (empty($errors) == true) {
-                move_uploaded_file($imgtmp, "../img/" . $imgname);
-                echo '<span style="color:#33b864;">Success. Variant Added</span>';
                 $db = new SQLite3('../db/basdat.db');
-                $sql = "INSERT INTO dorayaki(id_dorayaki,nama,price,amount,description,img_source) VALUES (NULL,:name,:price,:initstock,:desc,:imgname);"; 
-                $stmt = $db->prepare($sql);
-                $stmt->bindParam(":name",$name);
-                $stmt->bindParam(":price",$price);
-                $stmt->bindParam(":initstock",$initstock);
-                $stmt->bindParam(":desc",$desc);
-                $stmt->bindParam(":imgname",$imgname);
-                $stmt->execute();
+                $query = "SELECT `nama` FROM `dorayaki` WHERE  `nama` ='". $name . "';";
+                $res = $db->query($query);
+                $rws = $res->fetchArray();
+                if(!$rws){
+                    $sql = "INSERT INTO dorayaki(nama,price,amount,description,img_source) VALUES (:name,:price,:initstock,:desc,:imgname);"; 
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(":name",$name);
+                    $stmt->bindParam(":price",$price);
+                    $stmt->bindParam(":initstock",$initstock);
+                    $stmt->bindParam(":desc",$desc);
+                    $stmt->bindParam(":imgname",$imgname);
+                    $stmt->execute();
+                    move_uploaded_file($imgtmp, "../img/" . $imgname);
+                    echo '<span style="color:#33b864;">Success. Variant Added</span>';
+                }
+                else{
+                    echo '<span style="color:#C4161C;">Failed. Duplicate Product Name.</span>';
+                }
             }
             
         }
@@ -70,9 +78,9 @@ function submitImg()
                 <label>Name</label>
                 <input class="textinput" placeholder="Enter Product Name" name="addname" autocomplete="off" required>
                 <label>Price</label>
-                <input class="textinput" placeholder="Enter Product Price" name="addprice" autocomplete="off" required>
+                <input class="textinput" type="number" style="-moz-appearance:textfield;" placeholder="Enter Product Price" name="addprice" autocomplete="off" required>
                 <label>Initial Amount</label>
-                <input class="textinput" placeholder="Enter Product Amount" name="initstock" autocomplete="off" required>
+                <input class="textinput" type="number" style="-moz-appearance:textfield;" placeholder="Enter Product Amount" name="initstock" autocomplete="off" required>
                 <label>Description</label>
                 <textarea class="textinput" rows="5" cols="30" placeholder="Enter Product Description" name="adddesc" autocomplete="off" style="resize:none;overflow:hidden" required></textarea>
                 <label>Image</label>
