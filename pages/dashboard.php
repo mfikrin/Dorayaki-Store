@@ -6,12 +6,14 @@
     $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,amount,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
     $dorayakis = [];
     $results = $db->query($sql);
+
     while ($res = $results->fetchArray(1)){
-            array_push($dorayakis,$res);
+        array_push($dorayakis,$res);
     }
+    
 
     // var_dump($dorayakis);
-    // print_r($data);
+    // print_r($dorayakis);
 
     $db->close();
 ?>

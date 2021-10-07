@@ -52,6 +52,8 @@
       "INSERT INTO `transactions` VALUES (3, 'fik', 0, 10,400000);",
       "INSERT INTO `transactions` VALUES (4, 'shev', 1, 6,180000);",
       "INSERT INTO `transactions` VALUES (5, 'yah', 2, 4,160000);",
+      "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price)  VALUES ('fik', 2, 4,160000);",
+      "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price)  VALUES ('fik', 1, 10,300000);",
    ];
 
    foreach($sql as $que){
@@ -82,19 +84,19 @@
    $dorayaki = select_all('dorayaki',$db);
    $transactions = select_all('transactions',$db);
 
-   // print_r($users);
-   // print_r($dorayaki);
-   // print_r($transactions);
+   print_r($users);
+   print_r($dorayaki);
+   print_r($transactions);
 
-   // $sql = "SELECT id_dorayaki, sum(total_buy) as total from transactions group by id_dorayaki order by total desc";
-   // $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
-   // $data = [];
-   // $results = $db->query($sql);
-   // while ($res = $results->fetchArray(1)){
-   //       array_push($data,$res);
-   // }
+   $sql = "SELECT id_dorayaki, sum(total_buy) as total from transactions group by id_dorayaki order by total desc";
+   $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
+   $data = [];
+   $results = $db->query($sql);
+   while ($res = $results->fetchArray(1)){
+         array_push($data,$res);
+   }
 
-   // print_r($data);
+   print_r($data);
 
    $db->close();
      // Nanti tambahin tabel lain
