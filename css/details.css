@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.details {
+    margin: 1em 12.5% 1em 12.5%;
+    /* max-width: 1140px; */
+    padding-top: 2em;
+}
+.details .prod-img{
+   max-width:300px;
+   max-height: 300px;
+   height:auto;
+   width: auto;
+   margin: 0px 40px 0 0;
+   float:left;
+   padding-right: 1em;
+}
+.details .text{
+    display: inline;
+    line-height: 200%;
+}
+
+.text p{
+    overflow: hidden;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+    position: relative;
+  }
+.prod-buy{
+    background-color: #072f5f;
+    color: white;
+    height:40px;
+    width: 300px;
+    border: none;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+.prod-delete{
+    background-color: #C4161C;
+    color: white;
+    height:40px;
+    width: 150px;
+    border: none;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+.prod-edit{
+    background-color: #072f5f;
+    color: white;
+    height:40px;
+    width: 150px;
+    border: none;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+.prod-buy:hover,.prod-edit:hover{
+    background-color:#009dff;
+}
+
+.prod-delete:hover{
+    background-color: red;
+}
