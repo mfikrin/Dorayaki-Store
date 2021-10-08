@@ -1,21 +1,46 @@
 <?php
-    $_SESSION["username"] = "Fikri";
-    // require '../db/init_sample.php';
-    $db = new SQLite3('../db/basdat.db');
+session_start();
+require '../util/functions.php';
 
-    $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,amount,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
-    $dorayakis = [];
-    $results = $db->query($sql);
-
-    while ($res = $results->fetchArray(1)){
-        array_push($dorayakis,$res);
+// Check if cookie exists
+if (isset($_COOKIE['usernameEmail']) && isset($_COOKIE['key'])){
+    $key = $_COOKIE['key'];
+    $userEmail = $_COOKIE['usernameEmail'];
+    $isCookieValid = isEmailUsernameExistEncrypt($userEmail, $key);
+    if ($isCookieValid>=1){
+        // if useremail dan key in cookie is verified, make a session
+        $_SESSION['login']= true;
+        // Make session for admin, if the associated username is an admin
+        if ($isCookieValid==2){
+            $_SESSION['isAdmin'] = true;
+        }
     }
-    
+}
 
-    // var_dump($dorayakis);
-    // print_r($dorayakis);
+// Check if session exists
+if(!isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
 
-    $db->close();
+
+$_SESSION["username"] = "Fikri";
+// require '../db/init_sample.php';
+$db = new SQLite3('../db/basdat.db');
+
+$sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,amount,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
+$dorayakis = [];
+$results = $db->query($sql);
+
+while ($res = $results->fetchArray(1)){
+    array_push($dorayakis,$res);
+}
+
+
+// var_dump($dorayakis);
+// print_r($dorayakis);
+
+$db->close();
 ?>
 
 <!DOCTYPE html>
