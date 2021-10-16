@@ -46,14 +46,14 @@
    # insert to transactions table
 
    $sql =[
-      "INSERT INTO `transactions` VALUES (0, 'shev', 0, 2,40000);",
-      "INSERT INTO `transactions` VALUES (1, 'fik', 1, 3,90000);",
-      "INSERT INTO `transactions` VALUES (2, 'yah', 2, 4,160000);",
-      "INSERT INTO `transactions` VALUES (3, 'fik', 0, 10,400000);",
-      "INSERT INTO `transactions` VALUES (4, 'shev', 1, 6,180000);",
-      "INSERT INTO `transactions` VALUES (5, 'yah', 2, 4,160000);",
-      "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price)  VALUES ('fik', 2, 4,160000);",
-      "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price)  VALUES ('fik', 1, 10,300000);",
+      "INSERT INTO `transactions` VALUES (0, 'shev', 0, 2,40000,'2021-01-01 10:00:00');",
+      "INSERT INTO `transactions` VALUES (1, 'fik', 1, 3,90000,'2021-01-01 10:00:00');",
+      "INSERT INTO `transactions` VALUES (2, 'yah', 2, 4,160000,'2021-01-01 10:00:00');",
+      "INSERT INTO `transactions` VALUES (3, 'fik', 0, 10,400000,'2021-10-01 10:00:00');",
+      "INSERT INTO `transactions` VALUES (4, 'shev', 1, 6,180000,'2021-10-01 10:00:00');",
+      "INSERT INTO `transactions` VALUES (5, 'yah', 2, 4,160000,'2021-10-01 10:00:00');",
+      "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price,trans_time)  VALUES ('fik', 2, 4,160000,'2021-10-03 10:00:00');",
+      "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price,trans_time)  VALUES ('fik', 1, 10,300000,'2021-10-05 10:00:00');",
    ];
 
    foreach($sql as $que){

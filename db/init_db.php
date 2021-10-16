@@ -76,8 +76,9 @@
             id_dorayaki INTEGER,
             total_buy INTEGER NOT NULL,
             total_price INTEGER NOT NULL,
-            FOREIGN KEY (username) REFERENCES users(username) on update cascade on delete cascade,
-            FOREIGN KEY (id_dorayaki) REFERENCES dorayaki(id_dorayaki) on update cascade on delete cascade
+            trans_time DATETIME NOT NULL,
+            FOREIGN KEY (username) REFERENCES users(username),
+            FOREIGN KEY (id_dorayaki) REFERENCES dorayaki(id_dorayaki)
         )";
 
     $ret = $db->exec($sql);

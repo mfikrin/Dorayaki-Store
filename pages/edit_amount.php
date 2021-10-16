@@ -1,7 +1,6 @@
 <?php include('../util/buy_util.php');?>
 <?php
 $_SESSION['is_admin'] = 1;
-
 ?>
 <?php
     if (isset($_GET['id_dorayaki'])) {
@@ -32,10 +31,9 @@ $_SESSION['is_admin'] = 1;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/details.css">
-    <script src=""></script>
+    <script src="../util/buy_util.js"></script>
     <title>Dorayaki Details</title>
 </head>
-
 <body>
     <?php include('../util/header.php'); ?>
     <?php if($found){?>
@@ -46,17 +44,30 @@ $_SESSION['is_admin'] = 1;
         <div class="text">
             <h3 style="font-size:x-large"><?php echo $item_info[0]["nama"];?></h3>
             <h3 style="font-size:large;color: #C4161C ">Rp<?php echo number_format($item_info[0]["price"]);?></h3>
-            <p>Amount Sold : <?php echo $item_info[0]["total_buy"];?></p>
-            <p>Amount Remaining : <?php echo $item_info[0]["amount"];?></p>
-            <p><?php echo $item_info[0]["description"];?></p>
+            <p>Amount Remaining : </p>
         </div>
         <div>
-            <?php buttonAdder($dora_id); ?>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <?php buyAdder($dora_id);?>
+            <?php buyProduct($dora_id);?>
+        </form>
         </div>
     </div>
     <?php }
         else{
-            echo '<h3 style="font-size:x-large">Page not Found :P</h3>';
+            echo '<h3 style="font-size:x-large">Page not Found</h3>';
         }
         ?>
 </body>
+
+<script>
+    var id = "<?php echo $dora_id;?>";
+    // setInterval(function(){generateDetails(id);},1000);
+    // setInterval(myTimer, 1000);
+
+    // function myTimer() {
+    // const d = new Date();
+    // document.querySelector('.text').innerHTML+= d.toLocaleTimeString();
+    // }
+</script>
+

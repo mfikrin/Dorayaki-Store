@@ -44,7 +44,7 @@
                 </div></li>  
                     <li><a href="/pages/dashboard.php" class="barlink">Home</a></li>
                     <?php checkAdmin() ?>
-                    <li><div class = "nama"><?php echo $_SESSION["username"] ?><a href="" class="barlink"> | Logout</a></div></li>
+                    <li><div class = "nama"><?php echo $_SESSION["username"] ?><a href="../pages/logout.php" class="barlink"> | Logout</a></div></li>
                 </ul>
 
             </div>
