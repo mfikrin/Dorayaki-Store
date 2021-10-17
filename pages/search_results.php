@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    require '../util/loginAuth.php';
     
     
     if (isset($_GET['search']) and $_GET['search'] !== ""){

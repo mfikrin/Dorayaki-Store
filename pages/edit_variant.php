@@ -1,3 +1,8 @@
+<?php
+session_start();
+require '../util/loginAuth.php';
+?>
+
 <?php include('../util/item_util.php')?>
 <!-- Validation Soon -->
 <!-- Dorayaki Variant Adder -->

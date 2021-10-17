@@ -1,3 +1,8 @@
+<?php
+session_start();
+require '../util/loginAuth.php';
+?>
+
 <?php include('../util/item_util.php');?>
 <?php
 $_SESSION['is_admin'] = 1;

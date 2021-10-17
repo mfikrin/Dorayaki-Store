@@ -1,4 +1,6 @@
 <?php
+session_start();
+require '../util/loginAuth.php';
 include('../util/hist_util.php');
 ?>
 
