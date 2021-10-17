@@ -11,7 +11,7 @@ function tableMaker(){
         }
         if(empty($trans)){
             echo '<div class="histitle">
-            <h5>No Transaction Recorded.</h5>
+            <h5>No Transaction Recorded.<a href="../pages/dashboard.php">See Items</a></h5>
         </div>';
         }
         else{
@@ -55,15 +55,14 @@ function tableMaker(){
         }
         if(empty($trans)){
             echo '<div class="histitle">
-            <h5>No Transaction Recorded. <a href="../pages/dashboard.php">Buy Items</a></h5>
+            <h5>No Transaction Recorded. <a href="../pages/dashboard.php">See Items</a></h5>
         </div>';
         }
         else{
             echo "<table>
             <tr>
                 <th>Dorayaki Name</th>
-                <th>Buy Amount</th>
-                <th>Total Price</th>
+                <th>Add/Delete Amount</th>
                 <th>Date Time</th>
             </tr>";
             foreach($trans as $ts){
@@ -136,7 +135,7 @@ function prodTable($id){
     }
     if(empty($trans)){
         echo '<div class="histitle">
-        <h5>No Transaction Recorded.</h5>
+        <h5>No Transaction Recorded. <a href="../pages/dashboard.php">See Items</a></h5>
     </div>';
     }
     else{

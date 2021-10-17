@@ -1,8 +1,12 @@
 <?php
 session_start();
 require '../util/loginAuth.php';
+if(!$_SESSION['is_admin']){
+    header("Location: dashboard.php");
+}
 include('../util/hist_util.php');
 include('../util/item_util.php');
+
 ?>
 <?php
     if (isset($_GET['id_dorayaki'])) {

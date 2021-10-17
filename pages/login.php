@@ -12,7 +12,10 @@ if (isset($_COOKIE['usernameEmail']) && isset($_COOKIE['key'])){
         $_SESSION['login']= true;
         // Make session for admin, if the associated username is an admin
         if ($isCookieValid==2){
-            $_SESSION['isAdmin'] = true;
+            $_SESSION['is_admin'] = true;
+        }
+        else{
+            $_SESSION['is_admin'] = false;
         }
     }
 }
@@ -44,7 +47,10 @@ if(isset($_POST["login"])){
         $_SESSION['login'] = true;
         $_SESSION['usernameEmail'] = $_POST["usernameEmail"];
         if ($loginValidation == 2){
-            $_SESSION['isAdmin'] = true;
+            $_SESSION['is_admin'] = true;
+        }
+        else{
+            $_SESSION['is_admin'] = false;
         }
         header("Location: ../index.php");
         exit;

@@ -1,4 +1,9 @@
-<?php include('../util/item_util.php');?>
+<?php
+if(!$_SESSION['is_admin']){
+    header("Location: dashboard.php");
+}
+ 
+include('../util/item_util.php');?>
 <!-- Validation Soon -->
 <!-- Dorayaki Variant Deleter -->
 <?php

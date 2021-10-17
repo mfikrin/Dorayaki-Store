@@ -1,9 +1,4 @@
 <?php
-    $_SESSION["username"] = "Fikri";
-    $_SESSION['is_admin'] = 1;
-
-?>
-<?php
     function checkAdmin(){
         if ($_SESSION['is_admin']) {
             echo '<li><a href="../pages/addvariant.php" class="barlink">Add</a></li>';
@@ -45,7 +40,7 @@
                 </div></li>  
                     <li><a href="/pages/dashboard.php" class="barlink">Home</a></li>
                     <?php checkAdmin() ?>
-                    <li><div class = "nama"><?php echo $_SESSION["username"] ?><a href="../pages/logout.php" class="barlink"> | Logout</a></div></li>
+                    <li><div class = "nama"><?php echo $_SESSION['usernameEmail'] ?><a href="../pages/logout.php" class="barlink"> | Logout</a></div></li>
                 </ul>
 
             </div>

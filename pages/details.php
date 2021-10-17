@@ -5,10 +5,6 @@ require '../util/loginAuth.php';
 
 <?php include('../util/item_util.php');?>
 <?php
-$_SESSION['is_admin'] = 1;
-
-?>
-<?php
     if (isset($_GET['id_dorayaki'])) {
         $dora_id = htmlspecialchars(trim($_GET['id_dorayaki']));
         if(filter_var($dora_id, FILTER_VALIDATE_INT) or $dora_id == 0){
