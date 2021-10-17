@@ -1,4 +1,4 @@
-<?php include('../util/buy_util.php');?>
+<?php include('../util/item_util.php');?>
 <?php
 $_SESSION['is_admin'] = 1;
 ?>
@@ -31,7 +31,7 @@ $_SESSION['is_admin'] = 1;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/details.css">
-    <script src="../util/buy_util.js"></script>
+    <script src="../util/item_util.js"></script>
     <title>Dorayaki Details</title>
 </head>
 <body>

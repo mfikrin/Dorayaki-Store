@@ -6,9 +6,10 @@
 <?php
     function checkAdmin(){
         if ($_SESSION['is_admin']) {
-            echo '<li><a href="/pages/addvariant.php" class="barlink">Add Dorayaki</a></li>';
+            echo '<li><a href="../pages/addvariant.php" class="barlink">Add</a></li>';
+            echo '<li><a href="../pages/history.php" class="barlink">History</a></li>';
         } else if (!$_SESSION['is_admin']) {
-            echo '<li><a href="" class="barlink">Purchase History</a></li>';
+            echo '<li><a href="../pages/history.php" class="barlink">Purchase History</a></li>';
         }
     }
 

@@ -19,3 +19,10 @@ function generateDetails(id){
     req.open("GET","../util/get_details.php?id_dorayaki="+id,true);
     req.send();
 }
+
+
+function deletePrompt(id){
+       if (confirm("Delete this Item?")) {
+        window.location.href = "../util/delete_variant.php?id_dorayaki=" +id;
+    }
+}

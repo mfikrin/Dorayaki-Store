@@ -72,7 +72,20 @@ body{
 .prod-buy:hover,.prod-edit:hover{
     background-color:#009dff;
 }
+#editvar{
+    background-color:#1E5162;
+}
+#editvar:hover{
+    background-color:#296E85;
+}
 
 .prod-delete:hover{
     background-color: red;
+}
+
+#hist:hover{
+    background-color:#f2aa4cff;
+}
+#hist{
+    background-color:#FF8000;
 }

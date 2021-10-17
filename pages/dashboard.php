@@ -28,7 +28,7 @@ $_SESSION["username"] = "Fikri";
 // require '../db/init_sample.php';
 $db = new SQLite3('../db/basdat.db');
 
-$sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,amount,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
+$sql = "SELECT d.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,amount,img_source from dorayaki d left outer join transactions t ON t.id_dorayaki = d.id_dorayaki group by d.id_dorayaki order by total_buy desc";
 $dorayakis = [];
 $results = $db->query($sql);
 

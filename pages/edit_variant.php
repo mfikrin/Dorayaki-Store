@@ -1,5 +1,4 @@
-<?php include('../util/variant_util.php')?>
-<?php include('../util/buy_util.php');?>
+<?php include('../util/item_util.php')?>
 <!-- Validation Soon -->
 <!-- Dorayaki Variant Adder -->
 <?php
