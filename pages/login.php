@@ -42,6 +42,7 @@ if(isset($_POST["login"])){
 
         // Set new session 
         $_SESSION['login'] = true;
+        $_SESSION['usernameEmail'] = $_POST["usernameEmail"];
         if ($loginValidation == 2){
             $_SESSION['isAdmin'] = true;
         }
