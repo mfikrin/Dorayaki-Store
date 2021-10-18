@@ -51,26 +51,24 @@
 
 <body>
     <?php include('../util/header.php'); ?>
-    <?php 
-    $nama_dorayaki = "dorayaki";
-    ?>
+ 
     <div class="pagination">
         <?php if($curr_page > 1) :?>
-            <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $curr_page -1;?>">&laquo;</a>
+            <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $curr_page -1;?>">&laquo;</a>
         <?php else:?>
             <a href=>&laquo;</a>
         <?php endif; ?>
         <?php for($i = 1;$i <= $total_page;$i++): ?>
             <?php if($i == $curr_page): ?>
-                <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
+                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
             <?php else :?>
-                <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $i?>"><?php echo $i ?></a>
+                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $i?>"><?php echo $i ?></a>
             <?php endif; ?>
         <?php endfor; ?>
         <?php if($curr_page < $total_page) :?>
-            <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $curr_page + 1;?>">&raquo;</a>
+            <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $curr_page + 1;?>">&raquo;</a>
         <?php else:?>
-            <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $total_page;?>">&raquo;</a>
+            <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $total_page;?>">&raquo;</a>
         <?php endif; ?>
     </div>
     
