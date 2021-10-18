@@ -113,3 +113,16 @@ function isEmailUsernameExistEncrypt($usernameEmail, $key){
         $e->getMessage();
     }
 }
+
+
+function select_query($query,$db){
+    $data = [];
+    $results = $db->query($query);
+    while ($res = $results->fetchArray(1)){
+       array_push($data,$res);
+    }
+
+    // print_r($data);
+
+    return $data;
+ }
