@@ -4,10 +4,10 @@
     
     define('MAX_DORAYAKI', 8); // max_dorayaki pada result
     
-    if (isset($_GET['search']) and $_GET['search'] !== ""){
-        $dorayaki = htmlspecialchars(trim($_GET['search']));
+    if (isset($_GET['search']) && $_GET['search'] !== ""){
+        $nama_dorayaki = htmlspecialchars(trim($_GET['search']));
         $db = new SQLite3('../db/basdat.db');
-        $sql = "SELECT * FROM dorayaki WHERE nama LIKE '%$dorayaki%'";
+        $sql = "SELECT * FROM dorayaki WHERE nama LIKE '%$nama_dorayaki%'";
         
         $all_data = select_query($sql,$db);
         $count_data = count($all_data);
@@ -21,7 +21,7 @@
 
         $first_data = (MAX_DORAYAKI * $curr_page) - MAX_DORAYAKI;
 
-        $sql = "SELECT * FROM dorayaki WHERE nama LIKE '%$dorayaki%' LIMIT " .$first_data. "," . MAX_DORAYAKI;
+        $sql = "SELECT * FROM dorayaki WHERE nama LIKE '%$nama_dorayaki%' LIMIT " .$first_data. "," . MAX_DORAYAKI;
     
         $dorayaki_result = [];
 
@@ -51,23 +51,26 @@
 
 <body>
     <?php include('../util/header.php'); ?>
+    <?php 
+    $nama_dorayaki = "dorayaki";
+    ?>
     <div class="pagination">
         <?php if($curr_page > 1) :?>
-            <a href="?search=<?php $_GET['search']?>?page=<?php echo $curr_page -1;?>">&laquo;</a>
+            <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $curr_page -1;?>">&laquo;</a>
         <?php else:?>
             <a href=>&laquo;</a>
         <?php endif; ?>
         <?php for($i = 1;$i <= $total_page;$i++): ?>
             <?php if($i == $curr_page): ?>
-                <a href="?search=<?php $_GET['search']?>?page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
+                <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
             <?php else :?>
-                <a href="?search=<?php $_GET['search']?>?page=<?php echo $i?>"><?php echo $i ?></a>
+                <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $i?>"><?php echo $i ?></a>
             <?php endif; ?>
         <?php endfor; ?>
         <?php if($curr_page < $total_page) :?>
-            <a href="?search=<?php $_GET['search']?>?page=<?php echo $curr_page + 1;?>">&raquo;</a>
+            <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $curr_page + 1;?>">&raquo;</a>
         <?php else:?>
-            <a href="?search=<?php $_GET['search']?>?page=<?php echo $total_page;?>">&raquo;</a>
+            <a href="?search=<?php $nama_dorayaki?>&page=<?php echo $total_page;?>">&raquo;</a>
         <?php endif; ?>
     </div>
     
