@@ -37,6 +37,31 @@
         }
     }
 
+    function buttonBuy(){
+        if(!$_SESSION['is_admin']){
+            echo'<form action="" method="POST" enctype="multipart/form-data"><div class="buy-button">
+                <button class="edit-stock" type="button" id="krg" style=""> - </button>
+                <input class="buy-inp" type="number" id="qty" name="qty" min="1" max="" style="-moz-appearance:textfield;" required>
+                <button class="edit-stock" type="button" id="tmb" style="float:right"> + </button>
+                </div>'
+            ;
+            echo '<div><button class="butmit" name="buyItem" type="submit">Buy Above Amount</button></div>';
+            submitBuy();
+            echo '</form>';
+        }
+        else{
+            echo'<form action="" method="POST" enctype="multipart/form-data"><div class="buy-button">
+                <button class="edit-stock" type="button" id="krg" style=""> - </button>
+                <input class="buy-inp" type="number" id="qty" name="qty" style="-moz-appearance:textfield;" required>
+                <button class="edit-stock" type="button" id="tmb" style="float:right"> + </button>
+                </div>'
+            ;
+            echo '<div><button class="butmit" name="buyItem" type="submit">Commit Above Changes</button></div>';
+            submitChange();
+            echo '</form>';
+        }
+    }
+
     function buyProduct($id){
         if (isset($_POST['buyProd'])) {
             $db = new SQLite3('../db/basdat.db');
@@ -70,6 +95,63 @@
         }
     }
 }
+    function submitBuy(){
+        if(isset($_POST['buyItem']) and isset($_POST['qty'])){
+            $id = $_GET['id_dorayaki'];
+            $db = new SQLite3('../db/basdat.db');
+            $uname = $_SESSION['usernameEmail'];
+            $removed = $_POST['qty']; 
+            $iteminfo = getItem($id);
+            if($removed > $iteminfo[0]['amount']){
+                $db->close();
+                echo '<span style="color:#C4161C;">Buy Amount Cannot Exceed Product Stock</span>';
+            }
+            else{
+                $dt = date("Y-m-d h:i:sa");
+                $price = $iteminfo[0]["price"] * $removed;
+                $sql = "UPDATE dorayaki SET amount = amount - $removed WHERE id_dorayaki = $id";
+                $res = $db->exec($sql);
+                $sql2 = "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price,trans_time)  VALUES (:uname,:idora,:remov,:prc,:dt);";
+                $stmt = $db->prepare($sql2);
+                $stmt->bindParam(":uname",$uname);
+                $stmt->bindParam(":idora",$id);
+                $stmt->bindParam(":remov",$removed);
+                $stmt->bindParam(":prc",$price);
+                $stmt->bindParam(":dt",$dt);
+                $stmt->execute();
+                $db->close();
+            }
+        }
+    }
+
+    function submitChange(){
+        if(isset($_POST['buyItem']) and isset($_POST['qty'])){
+            $id = $_GET['id_dorayaki'];
+            $db = new SQLite3('../db/basdat.db');
+            $uname = $_SESSION['usernameEmail'];
+            $added = $_POST['qty']; 
+            $iteminfo = getItem($id);
+            if($iteminfo[0]['amount'] + $added < 0){
+                $db->close();
+                echo '<span style="color:#C4161C;">Final Amount Cannot be Negative</span>';
+            }
+            else{
+                $dt = date("Y-m-d h:i:sa");
+                $price = 0;
+                $sql = "UPDATE dorayaki SET amount = amount + $added WHERE id_dorayaki = $id";
+                $res = $db->exec($sql);
+                $sql2 = "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price,trans_time)  VALUES (:uname,:idora,:remov,:prc,:dt);";
+                $stmt = $db->prepare($sql2);
+                $stmt->bindParam(":uname",$uname);
+                $stmt->bindParam(":idora",$id);
+                $stmt->bindParam(":remov",$added);
+                $stmt->bindParam(":prc",$price);
+                $stmt->bindParam(":dt",$dt);
+                $stmt->execute();
+                $db->close();
+            }
+        }
+    }
 
     function submitImg($isNew){
         if (isset($_POST['AddVar'])) {
@@ -105,6 +187,7 @@
                             $stmt->bindParam(":desc",$desc);
                             $stmt->bindParam(":imgname",$imgpath);
                             $stmt->execute();
+                            $stmt->close();
                             move_uploaded_file($imgtmp, "../img/" . $imgname);
                             echo '<span style="color:#33b864;">Success. Variant Added</span>';
                         }
@@ -123,6 +206,7 @@
                         $stmt->bindParam(":desc",$desc);
                         $stmt->bindParam(":imgname",$imgpath);
                         $stmt->execute();
+                        $stmt->close();
                         move_uploaded_file($imgtmp, "../img/" . $imgname);
                         echo '<span style="color:#33b864;">Success. Variant Edited</span>';
                     }

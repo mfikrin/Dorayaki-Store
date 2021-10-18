@@ -89,3 +89,50 @@ body{
 #hist{
     background-color:#FF8000;
 }
+
+.edit-stock {
+  background-color: #072f5f;
+  color: #fff;
+  border:none;
+  font-weight: bold;
+  height: 38px;
+  padding: 0;
+  width: 38px;
+  position: relative;
+}
+
+/* #tmb{
+    left :-596px;
+} */
+
+.buy-button{
+    display: inline-flex;
+}
+.buy-inp {
+    position: relative;
+    height: 38px;
+    /* left: -6px; */
+    text-align: center;
+    /* width: 100px; */
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 0 5px;
+    resize: vertical;
+  }
+
+  .butmit{
+    background-color: #072f5f;
+    color:white;
+    height:40px;
+    width: 200px;
+    border: none;
+}
+
+.butmit:hover{
+    background-color:#009dff;
+}
+
+form{
+    padding:0;
+    margin:0;
+}
