@@ -2,7 +2,6 @@
 session_start();
 require '../util/loginAuth.php';
 
-$_SESSION["username"] = "Fikri";
 // require '../db/init_sample.php';
 $db = new SQLite3('../db/basdat.db');
 

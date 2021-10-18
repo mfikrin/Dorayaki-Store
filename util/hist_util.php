@@ -44,7 +44,7 @@ function tableMaker(){
         <h3>Admin Transaction History</h3>
     </div>';
         $db = new SQLite3('../db/basdat.db');
-        $unem =  'admin';
+        $unem =  $_SESSION['usernameEmail'];
         $sql = "SELECT d.nama,d.price,t.total_buy,t.total_price,t.trans_time FROM dorayaki as d, transactions as t where d.id_dorayaki = t.id_dorayaki AND t.username =:unem ORDER BY trans_time ASC";
         $trans = [];
         $stmt = $db->prepare($sql);
@@ -82,7 +82,7 @@ function tableMaker(){
 
     } else if (!$_SESSION['is_admin']) {
         $db = new SQLite3('../db/basdat.db');
-        $unem =  'shev';
+        $unem =  $_SESSION['usernameEmail'];
         $sql = "SELECT d.nama,d.price,t.total_buy,t.total_price,t.trans_time FROM dorayaki as d, transactions as t where d.id_dorayaki = t.id_dorayaki AND t.username =:unem ORDER BY trans_time ASC";
         $trans = [];
         $stmt = $db->prepare($sql);

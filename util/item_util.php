@@ -107,6 +107,7 @@
                 echo '<span style="color:#C4161C;">Buy Amount Cannot Exceed Product Stock</span>';
             }
             else{
+                date_default_timezone_set('Asia/Jakarta');
                 $dt = date("Y-m-d h:i:sa");
                 $price = $iteminfo[0]["price"] * $removed;
                 $sql = "UPDATE dorayaki SET amount = amount - $removed WHERE id_dorayaki = $id";
@@ -136,6 +137,7 @@
                 echo '<span style="color:#C4161C;">Final Amount Cannot be Negative</span>';
             }
             else{
+                date_default_timezone_set('Asia/Jakarta');
                 $dt = date("Y-m-d h:i:sa");
                 $price = 0;
                 $sql = "UPDATE dorayaki SET amount = amount + $added WHERE id_dorayaki = $id";
