@@ -31,7 +31,17 @@
       "INSERT INTO `dorayaki` VALUES (0, 'dorayaki1', 20000, 50, 'ini dorayaki 1', 'img/dorayaki.png');",
       "INSERT INTO `dorayaki` VALUES (1, 'dorayaki2', 30000, 60, 'ini dorayaki 2', 'img/dorayaki.png');",
       "INSERT INTO `dorayaki` VALUES (2, 'dorayaki3', 40000, 100, 'ini dorayaki 3', 'img/dorayaki.png');",
-      "INSERT INTO `dorayaki` VALUES (3, 'dorayaki4', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');"
+      "INSERT INTO `dorayaki` VALUES (3, 'dorayaki4', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (4, 'dorayaki5', 60000, 80, 'ini dorayaki 5', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (5, 'dorayaki6', 70000, 80, 'ini dorayaki 6', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (6, 'dorayaki7', 80000, 50, 'ini dorayaki 7', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (7, 'dorayaki8', 90000, 30, 'ini dorayaki 8', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (8, 'dorayaki9', 100000, 40, 'ini dorayaki 9', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (9, 'dorayaki10', 110000, 60, 'ini dorayaki 10', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (10, 'dorayaki11', 120000, 70, 'ini dorayaki 11', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (11, 'dorayaki12', 130000, 90, 'ini dorayaki 12', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (12, 'dorayaki13', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+
    ];
 
    foreach($sql as $que){

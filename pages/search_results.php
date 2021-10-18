@@ -2,12 +2,27 @@
     session_start();
     require '../util/loginAuth.php';
     
+    define('MAX_DORAYAKI', 8); // max_dorayaki pada result
     
     if (isset($_GET['search']) and $_GET['search'] !== ""){
         $dorayaki = htmlspecialchars(trim($_GET['search']));
         $db = new SQLite3('../db/basdat.db');
         $sql = "SELECT * FROM dorayaki WHERE nama LIKE '%$dorayaki%'";
         
+        $all_data = select_query($sql,$db);
+        $count_data = count($all_data);
+        $total_page = ceil($count_data/MAX_DORAYAKI);
+
+        if (isset($_GET["page"])){
+            $curr_page = $_GET["page"];
+        }else{
+            $curr_page = 1;
+        }
+
+        $first_data = (MAX_DORAYAKI * $curr_page) - MAX_DORAYAKI;
+
+        $sql = "SELECT * FROM dorayaki WHERE nama LIKE '%$dorayaki%' LIMIT " .$first_data. "," . MAX_DORAYAKI;
+    
         $dorayaki_result = [];
 
         $results = $db->query($sql);
@@ -36,6 +51,26 @@
 
 <body>
     <?php include('../util/header.php'); ?>
+    <div class="pagination">
+        <?php if($curr_page > 1) :?>
+            <a href="?search=<?php $_GET['search']?>?page=<?php echo $curr_page -1;?>">&laquo;</a>
+        <?php else:?>
+            <a href=>&laquo;</a>
+        <?php endif; ?>
+        <?php for($i = 1;$i <= $total_page;$i++): ?>
+            <?php if($i == $curr_page): ?>
+                <a href="?search=<?php $_GET['search']?>?page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
+            <?php else :?>
+                <a href="?search=<?php $_GET['search']?>?page=<?php echo $i?>"><?php echo $i ?></a>
+            <?php endif; ?>
+        <?php endfor; ?>
+        <?php if($curr_page < $total_page) :?>
+            <a href="?search=<?php $_GET['search']?>?page=<?php echo $curr_page + 1;?>">&raquo;</a>
+        <?php else:?>
+            <a href="?search=<?php $_GET['search']?>?page=<?php echo $total_page;?>">&raquo;</a>
+        <?php endif; ?>
+    </div>
+    
     <div class = "container">
 
             <?php

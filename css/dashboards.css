@@ -2,6 +2,30 @@ body{
     background-color: white;
 }
 
+.pagination{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.pagination a{
+    color: black;
+    font-weight:bold;
+    font-family:'Courier New', Courier, monospace;
+    float: left;
+    padding: 8px 16px;
+    margin: 12px 4px;
+    text-decoration: none;
+    transition: background-color .5s;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;}
+
 .container{
     display: flex;
     justify-content: center;
