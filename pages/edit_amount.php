@@ -47,12 +47,8 @@ require '../util/loginAuth.php';
             <h3 style="font-size:x-large"><?php echo $item_info[0]["nama"];?></h3>
             <h3 style="font-size:large;color: #C4161C ">Rp<?php echo number_format($item_info[0]["price"]);?></h3>
             <p>Amount Remaining : </p>
-        </div>
-        <div>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <?php buyAdder($dora_id);?>
-            <?php buyProduct($dora_id);?>
-        </form>
+            <p id="harga" style="color: #C4161C ">Total Price :Rp0</p>
+            <?php buttonBuy();?>
         </div>
     </div>
     <?php }
@@ -64,7 +60,35 @@ require '../util/loginAuth.php';
 
 <script>
     var id = "<?php echo $dora_id;?>";
-    // setInterval(function(){generateDetails(id);},1000);
+    var initPrice = "<?php echo $item_info[0]["price"];?>";
+    setInterval(function(){generateAmountRem(id);},1000);
+    document.getElementById('krg').addEventListener('click', function() {
+        document.getElementById('qty').stepDown();
+        })
+    document.getElementById('tmb').addEventListener('click', function() {
+        document.getElementById('qty').stepUp();
+        
+    })
+    document.getElementById('qty').addEventListener("change", function(){
+        // var initPrice = 4000
+        var input = parseInt(document.getElementById('qty').value);
+        var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+    });
+
+    document.getElementById('krg').addEventListener('click', function(){
+        // var initPrice = 4000;
+        var input = parseInt(document.getElementById('qty').value);
+        var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+    });
+    document.getElementById('tmb').addEventListener('click', function(){
+        // var initPrice = 4000;
+        var input = parseInt(document.getElementById('qty').value);
+        var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+    });
+
     // setInterval(myTimer, 1000);
 
     // function myTimer() {

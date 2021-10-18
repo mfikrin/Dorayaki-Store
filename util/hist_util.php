@@ -19,7 +19,7 @@ function tableMaker(){
             <tr>
                 <th>Username</th>
                 <th>Dorayaki Name</th>
-                <th>Buy Amount</th>
+                <th>Amount</th>
                 <th>Total Price</th>
                 <th>Date Time</th>
             </tr>";
@@ -142,7 +142,7 @@ function prodTable($id){
         echo "<table>
         <tr>
             <th>Username</th>
-            <th>Buy Amount</th>
+            <th>Amount</th>
             <th>Total Price</th>
             <th>Date Time</th>
         </tr>";

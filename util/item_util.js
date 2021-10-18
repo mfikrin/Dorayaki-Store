@@ -1,13 +1,4 @@
-function generateDetails(id){
-    // document.querySelector('.text').innerHTML+=`<p>Amount Sold :${Math.random()}</p>`;
-    // var req = new XMLHttpRequest();
-    // req.open("GET","../util/get_details.php?id_dorayaki="+id,true);
-    // req.send();
-    // req.onload = function(){
-    //     let res = req.response;
-    //     let list = JSON.parse(res);
-    //     document.querySelector('.text').innerHTML+=`<p>Amount Sold : ${list[0]['id_dorayaki']}</p>`;
-    // }
+function generateAmountRem(id){
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -26,3 +17,11 @@ function deletePrompt(id){
         window.location.href = "../util/delete_variant.php?id_dorayaki=" +id;
     }
 }
+
+// function sumPrice()
+// {
+//     var initPrice = document.getElementById('initpr').value;
+//     var input = document.getElementById('qty').value;
+//     var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//     document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+// }
