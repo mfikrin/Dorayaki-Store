@@ -74,7 +74,6 @@ function tableMaker(){
                 echo "<tr>
                 <td>$nm</td>
                 <td>$amn</td>
-                <td>$tp</td>
                 <td>$dtime</td>
               </tr>";
             }
