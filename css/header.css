@@ -29,6 +29,7 @@ header h1{
 }
 
 .webname{
+    
     color: inherit;
 }
 header ul{
@@ -64,7 +65,7 @@ header a{
 
 .nama{
     text-align: center;
-    color:#C4161C;
+    color:#df1a21;
     text-decoration: none;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;

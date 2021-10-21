@@ -10,7 +10,7 @@ body{
 .pagination a{
     color: black;
     font-weight:bold;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     float: left;
     padding: 8px 16px;
     margin: 12px 4px;
@@ -33,7 +33,7 @@ body{
 }
 
 .book-box{
-    background: white;
+    background: rgb(151, 127, 95);
     width: 270px;
     /* height: 390px; */
     margin: 10px;
@@ -43,8 +43,9 @@ body{
 }
 
 .image-base{
-    background-color:rgba(0, 0, 0, 0.705);
-    height:260px;
+    background-color:rgb(148, 107, 53);
+    max-height:260px;
+    max-width: 270px;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -54,15 +55,15 @@ body{
 
 .image-base img{
     padding: 15px 10px;
-    max-height: 260px;
-    max-width:270px;
+    height: 260px;
+    width: 270px;
 }
 
 
 /* unvisited link */
 .dorayaki-name:link,.dorayaki-name:visited{
     /* background-color: rgb(55, 141, 180); */
-    color :black;
+    color :white;
     text-align: center;
     text-decoration: none;
   }
@@ -71,11 +72,11 @@ body{
 
 .body-title{
     height: 55px;
-    background-color: rgb(51, 182, 95);
+    background-color: #9e1116;
     padding: 10px;
     font-size: 50x;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* width: 100%; */
 
 }
@@ -103,12 +104,12 @@ body{
 .book-box p{
     /* background-color: black; */
     font-weight: bold;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* unvisited link */
 .button:link,button:visited {
-    background-color: rgb(55, 141, 180);
+    background-color: #072f5f;
     transition: width 2s;
   }
 
