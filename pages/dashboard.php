@@ -60,23 +60,55 @@ $db->close();
 <body>
     <?php include('../util/header.php'); ?>
     <div class="pagination">
-        <?php if($curr_page > 1) :?>
-            <a href="?page=<?php echo $curr_page -1;?>">&laquo;</a>
-        <?php else:?>
-            <a href=>&laquo;</a>
+        <?php 
+            define('total_number',3);
+            // $tot_pagination = ceil($total_page/MAX_PAGE);
+            // $k = 1;
+
+            $total_pagination = ceil($total_page / total_number); // banyak pagination klw ada 5 page berarti 5/3 = 2
+            $idx = ceil($curr_page/3); # 1 misal di 5/3 =idx nya jd 2
+            $start_number = total_number*$idx - 2; # rumus = 3k-2 klw idx = 2 berarti 3*2 - 2 = 4 (kan jd page 4 5 6) => 4 5
+            
+            $end_number = $start_number + total_number - 1;
+            if ($idx == $total_pagination) {
+                if($total_page < $end_number){
+                    $end_number = $total_page;
+                }
+            }
+        ?>
+
+        <a href = "?page=1">
+            First
+        </a>
+
+        <?php 
+            if($curr_page > 1) :?>
+                <a href="?page=<?php echo $curr_page -1;?>">&laquo;</a>
+            <?php else:?>
+                <a href="#">&laquo;</a>
         <?php endif; ?>
-        <?php for($i = 1;$i <= $total_page;$i++): ?>
+        
+
+
+        <?php for($i = $start_number;$i <= $end_number;$i++): ?>
             <?php if($i == $curr_page): ?>
                 <a href="?page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
             <?php else :?>
                 <a href="?page=<?php echo $i?>"><?php echo $i ?></a>
             <?php endif; ?>
         <?php endfor; ?>
+
         <?php if($curr_page < $total_page) :?>
             <a href="?page=<?php echo $curr_page + 1;?>">&raquo;</a>
-        <?php else:?>
+            <?php else:?>
             <a href="?page=<?php echo $total_page;?>">&raquo;</a>
         <?php endif; ?>
+
+        <a href = "?page=<?php echo $total_page;?>">
+            Last
+        </a>
+
+        
     </div>
 
     <div class = "container">
@@ -87,17 +119,21 @@ $db->close();
                         $path_img = "../" . $dorayaki["img_source"];
                         // var_dump($path_img);
                     ?>
-                    <img src="<?php echo $path_img;?>">
+                    <a href="details.php?id_dorayaki=<?php echo $dorayaki["id_dorayaki"]?>">
+                        <img src="<?php echo $path_img;?>">
+                    </a>
                 </div>
             
-                <div class="body-title"><?php echo $dorayaki["nama"];?> </div>
+                <a href="details.php?id_dorayaki=<?php echo $dorayaki["id_dorayaki"]?>" class="dorayaki-name">
+                    <div class="body-title"><?php echo ucwords($dorayaki["nama"]);?> </div>
+                </a>
 
                 <p class ="body-text">Harga Dorayaki : Rp<?php echo $dorayaki["price"];?> </p>
                 <p class ="body-text">Jumlah Dorayaki : <?php echo $dorayaki["amount"];?> </p>
-                <a href="details.php?id_dorayaki=<?php echo $dorayaki["id_dorayaki"]?>">Detail</a>
+                <a class ="button" href="details.php?id_dorayaki=<?php echo $dorayaki["id_dorayaki"]?>">Detail</a>
             </div>
             <?php endforeach; ?>
-        </div>
+    </div>
 
 
 </body>

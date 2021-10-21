@@ -54,9 +54,20 @@ body{
 
 .image-base img{
     margin-top: 5px;
-    height: 250px;
-    width: 250px;
+    max-height: 260px;
+    max-width:270px;
 }
+
+
+/* unvisited link */
+.dorayaki-name:link,.dorayaki-name:visited{
+    /* background-color: rgb(55, 141, 180); */
+    color :black;
+    text-align: center;
+    text-decoration: none;
+  }
+
+
 
 .body-title{
     height: 55px;
@@ -75,7 +86,7 @@ body{
 
 }
 
-.book-box a{
+.button{
     /* background-color: black; */
     color: white;
     display: block;
@@ -96,19 +107,19 @@ body{
 }
 
 /* unvisited link */
-.book-box a:link,a:visited {
+.button:link,button:visited {
     background-color: rgb(55, 141, 180);
     transition: width 2s;
   }
 
   /* mouse over link */
-.book-box a:hover {
+.button:hover {
     background-color: rgb(51, 182, 95);
     
   }
   
   /* selected link */
-.book-box a:active {
+.button:active {
     background-color:rgba(39, 35, 35, 0.884);
   }
 

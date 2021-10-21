@@ -41,6 +41,97 @@
       "INSERT INTO `dorayaki` VALUES (10, 'dorayaki11', 120000, 70, 'ini dorayaki 11', 'img/dorayaki.png');",
       "INSERT INTO `dorayaki` VALUES (11, 'dorayaki12', 130000, 90, 'ini dorayaki 12', 'img/dorayaki.png');",
       "INSERT INTO `dorayaki` VALUES (12, 'dorayaki13', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (13, 'dorayaki14', 20000, 50, 'ini dorayaki 14', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (14, 'dorayaki15', 30000, 60, 'ini dorayaki 15', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (15, 'dorayaki16', 40000, 100, 'ini dorayaki 16', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (16, 'dorayaki17', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (17, 'dorayaki18', 60000, 80, 'ini dorayaki 5', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (18, 'dorayaki19', 70000, 80, 'ini dorayaki 6', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (19, 'dorayaki20', 80000, 50, 'ini dorayaki 7', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (20, 'dorayaki21', 90000, 30, 'ini dorayaki 8', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (21, 'dorayaki22', 100000, 40, 'ini dorayaki 9', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (22, 'dorayaki23', 110000, 60, 'ini dorayaki 10', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (23, 'dorayaki24', 120000, 70, 'ini dorayaki 11', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (24, 'dorayaki25', 130000, 90, 'ini dorayaki 12', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (25, 'dorayaki26', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (26, 'dorayaki27', 20000, 50, 'ini dorayaki 1', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (27, 'dorayaki28', 30000, 60, 'ini dorayaki 2', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (28, 'dorayaki29', 40000, 100, 'ini dorayaki 3', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (29, 'dorayaki30', 50000, 80, 'ini dorayaki 4', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (30, 'dorayaki31', 60000, 80, 'ini dorayaki 5', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (31, 'dorayaki32', 70000, 80, 'ini dorayaki 6', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (32, 'dorayaki33', 80000, 50, 'ini dorayaki 7', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (33, 'dorayaki34', 90000, 30, 'ini dorayaki 8', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (34, 'dorayaki35', 100000, 40, 'ini dorayaki 9', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (35, 'dorayaki36', 110000, 60, 'ini dorayaki 10', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (36, 'dorayaki37', 120000, 70, 'ini dorayaki 11', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (37, 'dorayaki38', 130000, 90, 'ini dorayaki 12', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` VALUES (38, 'dorayaki39', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki41', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki42', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki43', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki44', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki45', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki40', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki46', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki47', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki48', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki49', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki50', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki51', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki52', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki53', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki54', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki55', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki56', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki57', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki58', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki59', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki60', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki61', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki62', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki63', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki64', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki65', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki66', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki67', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki68', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki69', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki70', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki71', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki72', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki73', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki74', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki75', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki76', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki77', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki78', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki79', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki80', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki81', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki82', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki83', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki84', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki85', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki86', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki87', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki88', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki89', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki90', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki91', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki92', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki93', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki94', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki95', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki96', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki97', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki98', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki99', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki100', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki101', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki102', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+      "INSERT INTO `dorayaki` (nama,price,amount,description,img_source) VALUES ('dorayaki103', 140000, 10, 'ini dorayaki 13', 'img/dorayaki.png');",
+
 
    ];
 
@@ -90,23 +181,23 @@
       return $data;
    }
 
-   $users = select_all('users',$db);
-   $dorayaki = select_all('dorayaki',$db);
-   $transactions = select_all('transactions',$db);
+   // $users = select_all('users',$db);
+   // $dorayaki = select_all('dorayaki',$db);
+   // $transactions = select_all('transactions',$db);
 
-   print_r($users);
-   print_r($dorayaki);
-   print_r($transactions);
+   // print_r($users);
+   // print_r($dorayaki);
+   // print_r($transactions);
 
-   $sql = "SELECT id_dorayaki, sum(total_buy) as total from transactions group by id_dorayaki order by total desc";
-   $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
-   $data = [];
-   $results = $db->query($sql);
-   while ($res = $results->fetchArray(1)){
-         array_push($data,$res);
-   }
+   // $sql = "SELECT id_dorayaki, sum(total_buy) as total from transactions group by id_dorayaki order by total desc";
+   // $sql = "SELECT t.id_dorayaki,sum(total_buy) as total_buy, nama, d.price, description,img_source from transactions t inner join dorayaki d ON t.id_dorayaki = d.id_dorayaki group by t.id_dorayaki order by total_buy desc";
+   // $data = [];
+   // $results = $db->query($sql);
+   // while ($res = $results->fetchArray(1)){
+   //       array_push($data,$res);
+   // }
 
-   print_r($data);
+   // print_r($data);
 
    $db->close();
      // Nanti tambahin tabel lain
