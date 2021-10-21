@@ -55,7 +55,7 @@
                         
                         $_SESSION['login'] = true;
                         $_SESSION['usernameEmail'] = $usernameEmail;
-                        $_SESSION['isAdmin'] = true;
+                        $_SESSION['is_admin'] = true;
 
                         if ($checkbox == "true") {
                             setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
@@ -69,7 +69,7 @@
 
                         $_SESSION['login'] = true;
                         $_SESSION['usernameEmail'] = $usernameEmail;
-                        $_SESSION['isAdmin'] = false;
+                        $_SESSION['is_admin'] = false;
 
                         if ($checkbox == "true") {
                             setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
@@ -102,7 +102,7 @@
     //     $_SESSION['login'] = true;
     //     $_SESSION['usernameEmail'] = $_POST["usernameEmail"];
     //     if ($loginValidation == 2){
-    //         $_SESSION['isAdmin'] = true;
+    //         $_SESSION['is_admin'] = true;
     //     }
     //     header("Location: ../index.php");
     //     exit;

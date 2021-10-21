@@ -9,7 +9,7 @@ require '../util/functions.php';
 <html lang="en">
 <html>
     <head>
-        <title>Signup-Welcome to The Book Store</title>
+        <title>Signup-Welcome to Stand with Dorayaki</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/LoginRegister.css">
     </head>

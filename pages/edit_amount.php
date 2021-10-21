@@ -34,7 +34,7 @@ require '../util/loginAuth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/details.css">
     <script src="../util/item_util.js"></script>
-    <title>Dorayaki Details</title>
+    <title>Buy / Edit Dorayaki Amount</title>
 </head>
 <body>
     <?php include('../util/header.php'); ?>
