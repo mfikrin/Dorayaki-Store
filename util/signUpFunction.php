@@ -72,8 +72,8 @@
                 $messages[] = 'Proses pendaftaran berhasil';
                 $resultValidation = 1;
                 
-                $_SESSION['login'] = true;
-                $_SESSION['usernameEmail'] = $username;
+                // $_SESSION['login'] = true;
+                // $_SESSION['usernameEmail'] = $username;
             }
         } catch (PDOException $e) {
             $e->getMessage();
