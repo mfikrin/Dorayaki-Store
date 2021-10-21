@@ -6,41 +6,61 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: rgba(0, 0, 0, 0.6);
     background-image: url(../img/Dorayaki-background.jpg);
-    background-size: 100em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
     background-blend-mode: multiply;
 }
 
+.split-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .box {
-    position: relative; 
-    margin: 10% auto;
-    height: 400px;
-    width: 800px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* height: 400px; */
+    /* width: 600px; */
 }
 
 /* Left Box */
 .left-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* box-sizing: border-box;
     padding: 40px;
-    padding-top: 20px;
+    padding-top: 20px; */
     width: 400px;
-    height: 400px;
+    height: 500px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
-    border-radius: 2% 0 0 2%;
 }
+
+.left-box-signin {
+    height: 400px;
+}
+
+/* .left-box-signup {
+    padding-top: 70px;
+} */
 
 .main-title {
     text-align: center;
-    margin: 0 0 5px 0;
     font-weight: 500;
     font-size: 35px;
+    margin: 0 0 10px 0;
 }
 
 .signin {
-    margin: 0 0 35px 0;
+    margin: 0 0 25px 0;
 }
 
 .prompt {
@@ -56,6 +76,8 @@ body {
 .fill-form ul{
     /* margin-left: 10px; */
     padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .fill-form li {
@@ -64,7 +86,8 @@ body {
 
 .input-text {
     box-sizing: border-box;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 4px;
     width: 300px;
     height: 32px;
@@ -75,9 +98,42 @@ body {
     font-weight: 15px;
 }
 
+.input-text-username-signup {
+    margin-bottom: 2px;
+}
+
+.input-text-email-signup {
+    margin-bottom: 2px;
+}
+
+.box-message {
+    display: none;
+    padding-left: 5px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.form-messages {
+    background-color: rgb(255, 232, 232);
+    border: 1px solid red;
+    color: red;
+    display: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin: 0px;
+    padding: 5px 25px;
+    max-width: 300px;
+}
+
+.form-messages li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .btn {
     text-align: center;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 300px;
     height: 32px;
     background: #19aBFF;
@@ -98,8 +154,8 @@ body {
 .alt {
     display: block;
     text-align: center;
-    margin-top: 0px;
-    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     width: 300px;
     height: 30px;
     background: white;
@@ -117,28 +173,83 @@ body {
     transform: 0.2s ease;
 }
 
+.checkbox{
+    display: inline-block;
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Right box  */
 .right-box {
-    position: absolute;
-    top: 0;
-    right: 0;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+
     box-sizing: border-box;
     padding: 40px;
     width:  400px;
-    height: 400px;
+    height: 500px;
     background-color: #19aBFF;
-    border-radius: 0 2% 2% 0;
+}
+
+.right-box-signin {
+    height: 400px;
 }
 
 .desc-box {
+    margin-top: 50px;
     text-align: center;
-    margin: 70px 20px 20px 20px;
     font-size: 3em;
     font-weight: 100px;
     color: white;
 }
 
-.checkbox{
-    display: inline-block;
-    color: #777;
-    margin-bottom: 20px;
+.desc-quote {
+    text-align: right;
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: 100px;
+    color: white;
+}
+
+
+
+@media screen and (min-width: 900px) {
+    .split-screen{
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .box {
+        width: 800px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Left box */
+    .left-box {
+        display: flex;
+        width: 50%;
+        height: 500px;
+    }
+
+    .left-box-signin {
+        height: 400px;
+    }
+
+    /* Right box */
+    .right-box {
+        width: 50%;
+        height: 500px;
+    }
+
+    .right-box-signin {
+        height: 400px;
+    }
+
+    .desc-box{
+        margin-top: 60px;
+    }
+
 }

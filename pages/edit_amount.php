@@ -69,38 +69,6 @@ require '../util/loginAuth.php';
     var id = "<?php echo $dora_id;?>";
     var initPrice = "<?php echo $item_info[0]["price"];?>";
     setInterval(function(){generateAmountRem(id);},1000);
-    document.getElementById('krg').addEventListener('click', function() {
-        document.getElementById('qty').stepDown();
-        })
-    document.getElementById('tmb').addEventListener('click', function() {
-        document.getElementById('qty').stepUp();
-        
-    })
-    document.getElementById('qty').addEventListener("change", function(){
-        // var initPrice = 4000
-        var input = parseInt(document.getElementById('qty').value);
-        var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
-    });
-
-    document.getElementById('krg').addEventListener('click', function(){
-        // var initPrice = 4000;
-        var input = parseInt(document.getElementById('qty').value);
-        var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
-    });
-    document.getElementById('tmb').addEventListener('click', function(){
-        // var initPrice = 4000;
-        var input = parseInt(document.getElementById('qty').value);
-        var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
-    });
-
-    // setInterval(myTimer, 1000);
-
-    // function myTimer() {
-    // const d = new Date();
-    // document.querySelector('.text').innerHTML+= d.toLocaleTimeString();
-    // }
+    buttonListeners(initPrice);
 </script>
 
