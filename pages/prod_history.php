@@ -36,7 +36,7 @@ include('../util/item_util.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/history.css">
     <script src=""></script>
-    <title>Add Dorayaki Variant</title>
+    <title>Product Transactions History</title>
 </head>
 
 <body>
