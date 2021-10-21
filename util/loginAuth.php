@@ -9,6 +9,7 @@ if (isset($_COOKIE['usernameEmail']) && isset($_COOKIE['key'])){
     if ($isCookieValid>=1){
         // if useremail dan key in cookie is verified, make a session
         $_SESSION['login']= true;
+        $_SESSION['usernameEmail'] = $userEmail;
         // Make session for admin, if the associated username is an admin
         if ($isCookieValid==2){
             $_SESSION['is_admin'] = true;
