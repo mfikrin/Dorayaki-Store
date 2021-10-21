@@ -38,6 +38,7 @@
     }
 
     function buttonBuy(){
+        $id = $_GET['id_dorayaki'];
         if(!$_SESSION['is_admin']){
             echo'<form action="" method="POST" enctype="multipart/form-data"><div class="buy-button">
                 <button class="edit-stock" type="button" id="krg" style=""> - </button>
@@ -45,7 +46,8 @@
                 <button class="edit-stock" type="button" id="tmb" style="float:right"> + </button>
                 </div>'
             ;
-            echo '<div><button class="butmit" name="buyItem" type="submit">Buy Above Amount</button></div>';
+            echo '<div><div class="inFlex"><a href="../pages/details.php?id_dorayaki='. $id . '"><button class="butmit" type="button" id="canBut">Cancel</button></a>';
+            echo '<button class="butmit" name="buyItem" id="subBut" type="submit">Buy Above Amount</button></div></div>';
             submitBuy();
             echo '</form>';
         }
@@ -56,7 +58,8 @@
                 <button class="edit-stock" type="button" id="tmb" style="float:right"> + </button>
                 </div>'
             ;
-            echo '<div><button class="butmit" name="buyItem" type="submit">Commit Above Changes</button></div>';
+            echo '<div><div class="inFlex"><a href="../pages/details.php?id_dorayaki='. $id . '"><button class="butmit" type="button" id="canBut">Cancel</button></a>';
+            echo '<button class="butmit" name="buyItem" id="subBut" type="submit">Commit Above Changes</button></div></div>';
             submitChange();
             echo '</form>';
         }
@@ -121,6 +124,7 @@
                 $stmt->bindParam(":dt",$dt);
                 $stmt->execute();
                 $db->close();
+                echo '<span style="color:#33b864;">Success. Product Bought</span>';
             }
         }
     }
@@ -151,6 +155,7 @@
                 $stmt->bindParam(":dt",$dt);
                 $stmt->execute();
                 $db->close();
+                echo '<span style="color:#33b864;">Success. Stock Updated</span>';
             }
         }
     }

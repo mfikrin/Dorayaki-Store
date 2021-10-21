@@ -30,19 +30,19 @@ function buttonListeners(initPrice){
         // var initPrice = 4000
         var input = parseInt(document.getElementById('qty').value);
         var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+        document.getElementById('puraisu').innerHTML = "Rp"+total;
     });
 
     document.getElementById('krg').addEventListener('click', function(){
         // var initPrice = 4000;
         var input = parseInt(document.getElementById('qty').value);
         var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+        document.getElementById('puraisu').innerHTML = "Rp"+total;
     });
     document.getElementById('tmb').addEventListener('click', function(){
         // var initPrice = 4000;
         var input = parseInt(document.getElementById('qty').value);
         var total = (input*initPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('harga').innerHTML = "Total Price :Rp"+total;
+        document.getElementById('puraisu').innerHTML = "Rp"+total;
     });
 }

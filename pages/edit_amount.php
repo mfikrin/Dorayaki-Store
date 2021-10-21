@@ -48,7 +48,7 @@ require '../util/loginAuth.php';
                 <h3 style="font-size:x-large"><?php echo $item_info[0]["nama"];?></h3>
                 <h3 style="font-size:large;color: #C4161C ">Rp<?php echo number_format($item_info[0]["price"]);?></h3>
                 <p>Amount Remaining : </p>
-                <p id="harga" style="color: #C4161C ">Total Price :Rp0</p>
+                <p id="harga">Total Price : <span id="puraisu" style="color: #C4161C ">Rp0</span></p>
                 <?php buttonBuy();?>
             <?php }else{?>
                 <h3 style="font-size:x-large"><?php echo $item_info[0]["nama"];?></h3>

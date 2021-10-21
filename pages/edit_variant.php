@@ -56,7 +56,10 @@ include('../util/item_util.php')?>
                 <label>Image</label>
                 <input class="imginput" type="file" name="addimage" required>
                 <?php checkExt() ?>
-                <button class="butmit" name="AddVar" type="submit">Submit</button>
+                <div class ="inFlex">
+                    <a href="../pages/details.php?id_dorayaki=<?php echo $dora_id;?>"><button class="butmit" type="button" id="canBut">Cancel</button></a>
+                    <button class="butmit" name="AddVar" id="edVar" type="submit">Submit</button>
+                </div>
                 <?php submitImg(false) ?>
             </div>
         </form>

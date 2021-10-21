@@ -54,3 +54,17 @@ body{
     width:400px ;
     margin: 0 auto;
 }
+.inFlex{
+    display: inline-flex;
+}
+
+#canBut{
+    width : 200px;
+    background-color:#C4161C;  
+}
+#canBut:hover{
+    background-color: red;
+}
+#edVar{
+    width : 205px;
+}

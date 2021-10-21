@@ -136,3 +136,17 @@ form{
     padding:0;
     margin:0;
 }
+
+#canBut{
+    width : 100px;
+    background-color:#C4161C;  
+}
+#canBut:hover{
+    background-color: red;
+}
+#subBut{
+    width : 150px;
+}
+.inFlex{
+    display: inline-flex;
+}
