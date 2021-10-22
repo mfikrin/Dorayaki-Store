@@ -2,7 +2,7 @@
     session_start();
     require '../util/loginAuth.php';
     
-    define('MAX_DORAYAKI', 8); // max_dorayaki pada result
+    define('MAX_DORAYAKI', 10); // max_dorayaki pada result
     
     if (isset($_GET['search']) && $_GET['search'] !== ""){
         $nama_dorayaki = htmlspecialchars(trim($_GET['search']));
@@ -33,7 +33,7 @@
         // print_r($dorayaki_result);
 
     }else{
-        $no_keyword = '<div class = results_dorayaki>'. "<span style='color:#33b864;'>Please input keyword of dorayaki's name </span>" . $_GET['search'] . '</div>';
+        $no_keyword = '<div class = results_dorayaki>'. "<span style='color:#33b864;'>Please input keyword of dorayaki's name </span> </div>";
     }
 
 ?>
@@ -51,66 +51,70 @@
 
 <body>
     <?php include('../util/header.php'); ?>
- 
-    <div class="pagination">
-        <?php 
-            define('total_number',3);
-            // $tot_pagination = ceil($total_page/MAX_PAGE);
-            // $k = 1;
 
-            $total_pagination = ceil($total_page / total_number); // banyak pagination klw ada 5 page berarti 5/3 = 2
-            $idx = ceil($curr_page/3); # 1 misal di 5/3 =idx nya jd 2
-            $start_number = total_number*$idx - 2; # rumus = 3k-2 klw idx = 2 berarti 3*2 - 2 = 4 (kan jd page 4 5 6) => 4 5
-            
-            $end_number = $start_number + total_number - 1;
-            if ($idx == $total_pagination) {
-                if($total_page < $end_number){
-                    $end_number = $total_page;
+    <?php if (isset($no_keyword)):?>
+        <div class="container">
+            <?php echo $no_keyword; ?>
+        </div>
+    <?php endif;?>
+
+    <?php if (isset($dorayaki_result) && count($dorayaki_result) > 0):?>
+        <div class="pagination">
+            <?php 
+                define('total_number',3);
+                // $tot_pagination = ceil($total_page/MAX_PAGE);
+                // $k = 1;
+
+                $total_pagination = ceil($total_page / total_number); // banyak pagination klw ada 5 page berarti 5/3 = 2
+                $idx = ceil($curr_page/3); # 1 misal di 5/3 =idx nya jd 2
+                $start_number = total_number*$idx - 2; # rumus = 3k-2 klw idx = 2 berarti 3*2 - 2 = 4 (kan jd page 4 5 6) => 4 5
+                
+                $end_number = $start_number + total_number - 1;
+                if ($idx == $total_pagination) {
+                    if($total_page < $end_number){
+                        $end_number = $total_page;
+                    }
                 }
-            }
-        ?>
+            ?>
 
-        <a href = "?search=<?php echo $nama_dorayaki?>&page=1">
-            First
-        </a>
+            <a href = "?search=<?php echo $nama_dorayaki?>&page=1">
+                First
+            </a>
 
-        <?php 
-            if($curr_page > 1) :?>
-                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $curr_page -1;?>">&laquo;</a>
-            <?php else:?>
-                <a href="#">&laquo;</a>
-        <?php endif; ?>
-        
-
-
-        <?php for($i = $start_number;$i <= $end_number;$i++): ?>
-            <?php if($i == $curr_page): ?>
-                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
-            <?php else :?>
-                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $i?>"><?php echo $i ?></a>
+            <?php 
+                if($curr_page > 1) :?>
+                    <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $curr_page -1;?>">&laquo;</a>
+                <?php else:?>
+                    <a href="#">&laquo;</a>
             <?php endif; ?>
-        <?php endfor; ?>
+            
 
-        <?php if($curr_page < $total_page) :?>
-            <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $curr_page + 1;?>">&raquo;</a>
-            <?php else:?>
-            <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $total_page;?>">&raquo;</a>
-        <?php endif; ?>
 
-        <a href = "?search=<?php echo $nama_dorayaki?>&page=<?php echo $total_page;?>">
-            Last
-        </a>
+            <?php for($i = $start_number;$i <= $end_number;$i++): ?>
+                <?php if($i == $curr_page): ?>
+                    <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $i?>" class ="active"><?php echo $i ?></a>
+                <?php else :?>
+                    <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $i?>"><?php echo $i ?></a>
+                <?php endif; ?>
+            <?php endfor; ?>
 
-        
+            <?php if($curr_page < $total_page) :?>
+                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $curr_page + 1;?>">&raquo;</a>
+                <?php else:?>
+                <a href="?search=<?php echo $nama_dorayaki?>&page=<?php echo $total_page;?>">&raquo;</a>
+            <?php endif; ?>
+
+            <a href = "?search=<?php echo $nama_dorayaki?>&page=<?php echo $total_page;?>">
+                Last
+            </a>        
     </div>
+    <?php endif;?>
+ 
+    
     
     <div class = "container">
 
             <?php
-
-            if (isset($no_keyword)){
-                echo $no_keyword;
-            }
 
 
             if (isset($dorayaki_result)) {
