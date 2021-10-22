@@ -142,8 +142,8 @@
                                     <div class="body-title"><?php echo ucwords($dorayaki["nama"]);?> </div>
                                 </a>
                 
-                                <p class ="body-text">Harga Dorayaki : Rp<?php echo $dorayaki["price"];?> </p>
-                                <p class ="body-text">Jumlah Dorayaki : <?php echo $dorayaki["amount"];?> </p>
+                                <p class ="body-text" style="font-weight: bold;color:#C4161C">Rp<?php echo number_format($dorayaki["price"]);?> </p>
+                                <p class ="body-text">Stock : <?php echo $dorayaki["amount"];?> </p>
                                 <a class ="button" href="details.php?id_dorayaki=<?php echo $dorayaki["id_dorayaki"]?>">Detail</a>
                             </div>
                             <?php endforeach;
