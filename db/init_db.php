@@ -88,6 +88,22 @@
    //      echo "transactions Table created successfully\n";
    //   }
 
+   $sql = "
+   CREATE TABLE token ( 
+   token_id VARCHAR(100) NOT NULL,
+   username VARCHAR(100) NOT NULL,
+   login_time DATETIME NOT NULL,
+   expire_time DATETIME NOT NULL,
+   PRIMARY KEY (token_id)
+    )";
+
+  $ret = $db->exec($sql);
+  // if(!$ret){
+  //   echo $db->lastErrorMsg();
+  // } else {
+  //   echo "token Table created successfully\n";
+  // }
+
 
      $db->close();
      // Nanti tambahin tabel lain

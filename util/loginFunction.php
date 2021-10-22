@@ -1,5 +1,6 @@
 <?php
     session_start();
+    date_default_timezone_set("Asia/Jakarta");
     require 'functions.php';
     // Function to check login system
     // 2 : Email/username dan password benar as admin
@@ -56,10 +57,18 @@
                         $_SESSION['login'] = true;
                         $_SESSION['usernameEmail'] = $usernameEmail;
                         $_SESSION['is_admin'] = true;
+                        setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
 
                         if ($checkbox == "true") {
-                            setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
+                            // setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
                             setcookie('key', hash('sha256',$usernameEmail), time()+3600, '/');
+                            // Set token
+                            $tokenID = hash('sha256',$usernameEmail);
+                            $user = $usernameEmail;
+                            $currTime = date("Y-m-d H:i:s");
+                            $expireTime = date("Y-m-d H:i:s", strtotime("+30 Minutes"));
+                            $sql = "INSERT INTO `token` VALUES ('$tokenID', '$user', '$currTime', '$expireTime')";
+                            $queryResult = $db->exec($sql);
                         }
                         
                     } else {
@@ -70,10 +79,18 @@
                         $_SESSION['login'] = true;
                         $_SESSION['usernameEmail'] = $usernameEmail;
                         $_SESSION['is_admin'] = false;
+                        setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
 
                         if ($checkbox == "true") {
-                            setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
+                            // setcookie('usernameEmail', $usernameEmail, time()+3600, '/');
                             setcookie('key', hash('sha256',$usernameEmail), time()+3600, '/');
+                            // Set token
+                            $tokenID = hash('sha256',$usernameEmail);
+                            $user = $usernameEmail;
+                            $currTime = date("Y-m-d H:i:s");
+                            $expireTime = date("Y-m-d H:i:s", strtotime("+30 Minutes"));
+                            $sql = "INSERT INTO `token` VALUES ('$tokenID', '$user', '$currTime', '$expireTime')";
+                            $queryResult = $db->exec($sql);
                         }
                         
                     }

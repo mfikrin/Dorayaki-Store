@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Jakarta");
 
 function signUp($data){
     // Function to insert new customer data to database system
@@ -33,6 +34,7 @@ function signUp($data){
         // Insert new data into the database
         $sql = "INSERT INTO `users` VALUES ('$username', '$email', '$passwordHashed', 0)";
         $queryResult = $db->exec($sql);
+        $db = null;
         return 1;
     } catch (PDOException $e) {
         $e->getMessage();
@@ -85,6 +87,7 @@ function isEmailUsernameExistEncrypt($usernameEmail, $key){
     // 2 : key and usernamae/email match, as admin
     // 1 : key and usernamae/email match, as customer
     // 0 : Cookie doesn't exist or key and username/email don't match
+    // echo $usernameEmail . "<br>";
     try {
         $db = new PDO('sqlite:../db/basdat.db');
         $sql = "SELECT * FROM users WHERE username='$usernameEmail' OR email='$usernameEmail'";
@@ -97,8 +100,33 @@ function isEmailUsernameExistEncrypt($usernameEmail, $key){
             return 0;
         }
 
-        // Check if usernameEmail equals to key
+        // Check if (in cookies) usernameEmail equals to key
         if ($key === hash('sha256',$usernameEmail)){
+            // Check key if it exists from token table
+            $sql = "SELECT * FROM token WHERE token_id='$key'";
+            $queryResult1 = $db->query($sql);
+            $result1 = $queryResult1->fetchAll(PDO::FETCH_ASSOC);
+            // check if token_id exists
+            if (count($result1) == 0){
+                return 0;
+            }
+            // echo $result1[0]['username'];
+            
+            // check if username on cooke matches with from token table
+            if ($result1[0]['username'] != $usernameEmail){
+                return 0;
+            }
+            // echo "MASUKkkkk". "<br>";
+            // echo $result1[0]['expire_time']. "<br>";
+            // echo date("Y-m-d H:i:s"). "<br>";
+
+            // Check if token has expired
+            if ($result1[0]['expire_time'] < date("Y-m-d H:i:s")){
+                $sql = "DELETE FROM token WHERE token_id = '$key'";
+                $queryResult2 = $db->exec($sql);
+                return 0;
+            }
+
             if ($result[0]['is_admin']==1){
                 return 2;
             } else {
@@ -125,4 +153,4 @@ function select_query($query,$db){
     // print_r($data);
 
     return $data;
- }
+}

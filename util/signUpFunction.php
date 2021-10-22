@@ -1,5 +1,6 @@
 <?php   
     session_start();
+    date_default_timezone_set("Asia/Jakarta");
     // Function to insert new customer data to database system
     // 1 : Insert berhasil
     // 0 : Password dan confirmation password tidak match
@@ -72,8 +73,22 @@
                 $messages[] = 'Proses pendaftaran berhasil';
                 $resultValidation = 1;
                 
-                // $_SESSION['login'] = true;
-                // $_SESSION['usernameEmail'] = $username;
+                // Setting Sessions
+                $_SESSION['login'] = true;
+                $_SESSION['usernameEmail'] = $username;
+                $_SESSION['is_admin'] = false;
+
+                // Setting cookie
+                setcookie('usernameEmail', $username, time()+3600, '/');
+                setcookie('key', hash('sha256',$username), time()+3600, '/');
+
+                // Set token
+                $tokenID = hash('sha256',$username);
+                $user = $username;
+                $currTime = date("Y-m-d H:i:s");
+                $expireTime = date("Y-m-d H:i:s", strtotime("+30 Minutes"));
+                $sql = "INSERT INTO `token` VALUES ('$tokenID', '$user', '$currTime', '$expireTime');";
+                $queryResult = $db->exec($sql);
             }
         } catch (PDOException $e) {
             $e->getMessage();

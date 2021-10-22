@@ -129,7 +129,7 @@ require '../util/functions.php';
 
             function handleResponse (responseObject) {
                 if (responseObject.validation) {
-                    location.href = '../pages/login.php';
+                    location.href = '../index.php';
                 } else {
                     while (form.messages.firstChild) {
                         form.messages.removeChild(form.messages.firstChild);

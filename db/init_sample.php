@@ -125,6 +125,18 @@
    // }
 
    // print_r($data);
+   
+   date_default_timezone_set("Asia/Jakarta");
+   $tokenID = hash('sha256',"HIHIHAHAHA");
+   $currTime = date("Y-m-d H:i:s");
+   $expireTime = date("Y-m-d H:i:s", strtotime("+30 Minutes"));
+   $sql = "INSERT INTO `token` VALUES ('$tokenID', 'HIHIHAHAHA', '$currTime', '$expireTime');";
+   $ret = $db->exec($sql);
+   // if(!$ret){
+   //    echo $db->lastErrorMsg();
+   // } else {
+   //    echo "users token updated successfully\n";
+   // }
 
    $db->close();
      // Nanti tambahin tabel lain
