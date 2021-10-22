@@ -22,7 +22,7 @@ Fitur-fitur yang tersedia meliputi :
 
 ## Requirements
 1. [XAMPP](https://www.apachefriends.org/download.html) , dilengkapi PHP dan SQLite
-2. Web Browser
+2. Web Browser (disarankan versi terbaru, support HTML 5, CSS 3, dan JavaScript ES6)
 
 ## Cara Instalasi
 0. Download dan Install [XAMPP](https://www.apachefriends.org/download.html)
@@ -33,9 +33,43 @@ Fitur-fitur yang tersedia meliputi :
 ## Cara Menjalankan Server
 0. Run XAMPP, start module Apache dan MySQL
 1. Run command line, change directory ke direktori tempat aplikasi web berada `xampp/htdocs/tugas-besar-1`, run command `php -S localhost:port-number`, jika port number yang digunakan adalah 8080 maka command yang digunakan `php -S localhost:8080`
-2.  Untuk inisialisasi basis data, pergi ke URL `localhost:8080/db/init_db.php` dan `localhost:8080/db/init_sample.php` pada browser (untuk inisialisasi sampel data); Asumsi port yang digunakan = 8080
-3.  Jika data sudah diinisialisasi, dapat mengakses aplikasi web dengan pergi ke URL `localhost:8080` pada browser
+2.  Untuk inisialisasi basis data pada pertama kalinya, pergi ke URL `localhost:8080/db/init_db.php` dan `localhost:8080/db/init_sample.php` pada browser (untuk inisialisasi sampel data); Asumsi port yang digunakan = 8080
+3.  Jika data sudah diinisialisasi, dapat mengakses aplikasi web dengan pergi ke URL `localhost:8080` pada browser (basis data tidak perlu diinisialisasi ulang untuk penggunaan berikutnya).
+4.  Akan ditampilkan halaman index, jika belum login maka diarahkan ke halaman login.
   
-## Screenshots
+## Screenshots (selengkapnya pada direktori screenshots)
+- Login ![Login](./screenshots/login-prompt.png)
+- Sign Up ![SignUp](./screenshots/signup-prompt.png)
+- Dashboard ![Dashboard](./screenshots/dashboard-admin.png)
+- Dorayaki Details ![Detail](./screenshots/detail-admin.png)
+- Change Amount ![ChangeAmount](./screenshots/change-amount.png)
+- Add Variant ![AddVar](./screenshots/add-variant.png)
+- Edit Variant ![Edvar](./screenshots/edit-variant.png)
+- Transaction History ![History](./screenshots/history-admin.png)
+- Product Specific History ![ProHist](./screenshots/prospec-hist.png)
+- Search Result ![Search](./screenshots/search-result.png)
 
 ## Pembagian Tugas
+### Server-side
+- Login : 13519091
+- Register : 13519091
+- Dashboard : 13519069
+- Hasil pencarian : 13519069
+- Penambahan,pengubahan,penghapusan varian dorayaki : 13519018
+- Detail varian dorayaki : 13519018
+- Pengubahan stok/Pembelian dorayaki : 13519018
+- Data Expire Time : 13519091
+- Docker : -
+- Halaman Riwayat Pengubahan stok/Pembelian dorayaki : 13519018 
+
+
+### Client-side
+- Login : 13519091
+- Register : 13519091
+- Dashboard : 13519069, 13519018
+- Hasil pencarian : 13519069
+- Penambahan,pengubahan,penghapusan varian dorayaki : 13519018
+- Detail varian dorayaki : 13519018
+- Pengubahan stok/Pembelian dorayaki : 13519018
+- Responsive design : 13519018, 13519069, 13519091
+- Halaman Riwayat Pengubahan stok/Pembelian dorayaki : 13519018
