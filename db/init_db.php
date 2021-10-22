@@ -1,37 +1,46 @@
 <?php
     $db = new SQLite3('./basdat.db');
-   //  if(!$db) {
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "Opened database successfully\n";
-   //   }
+    if(!$db) {
+        echo $db->lastErrorMsg();
+     } else {
+        echo "Opened database successfully\n";
+     }
 
       $sql ="DROP TABLE IF EXISTS users";
 
     $ret = $db->exec($sql);
-   //  if(!$ret){
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "users Table deleted successfully\n";
-   //   }
+    if(!$ret){
+        echo $db->lastErrorMsg();
+     } else {
+        echo "users Table deleted successfully\n";
+     }
 
      $sql ="DROP TABLE IF EXISTS dorayaki";
 
     $ret = $db->exec($sql);
-   //  if(!$ret){
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "dorayaki Table deleted successfully\n";
-   //   }
+    if(!$ret){
+        echo $db->lastErrorMsg();
+     } else {
+        echo "dorayaki Table deleted successfully\n";
+     }
 
      $sql ="DROP TABLE IF EXISTS transactions";
 
     $ret = $db->exec($sql);
-   //  if(!$ret){
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "transactions Table deleted successfully\n";
-   //   }
+    if(!$ret){
+        echo $db->lastErrorMsg();
+     } else {
+        echo "transactions Table deleted successfully\n";
+     }
+
+   $sql ="DROP TABLE IF EXISTS token";
+
+    $ret = $db->exec($sql);
+    if(!$ret){
+      echo $db->lastErrorMsg();
+   } else {
+      echo "token Table deleted successfully\n";
+   }
 
     $sql ="
         CREATE TABLE users(
@@ -42,11 +51,11 @@
         )";
 
     $ret = $db->exec($sql);
-   //  if(!$ret){
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "users Table created successfully\n";
-   //   }
+    if(!$ret){
+        echo $db->lastErrorMsg();
+     } else {
+        echo "users Table created successfully\n";
+     }
 
      // Tabel Dorayaki
 
@@ -61,11 +70,11 @@
         )";
 
     $ret = $db->exec($sql);
-   //  if(!$ret){
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "dorayaki Table created successfully\n";
-   //   }
+    if(!$ret){
+        echo $db->lastErrorMsg();
+     } else {
+        echo "dorayaki Table created successfully\n";
+     }
 
      // Tabel Transaksi User
 
@@ -82,11 +91,11 @@
         )";
 
     $ret = $db->exec($sql);
-   //  if(!$ret){
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "transactions Table created successfully\n";
-   //   }
+    if(!$ret){
+        echo $db->lastErrorMsg();
+     } else {
+        echo "transactions Table created successfully\n";
+     }
 
    $sql = "
    CREATE TABLE token ( 
@@ -98,11 +107,11 @@
     )";
 
   $ret = $db->exec($sql);
-  // if(!$ret){
-  //   echo $db->lastErrorMsg();
-  // } else {
-  //   echo "token Table created successfully\n";
-  // }
+  if(!$ret){
+    echo $db->lastErrorMsg();
+  } else {
+    echo "token Table created successfully\n";
+  }
 
 
      $db->close();

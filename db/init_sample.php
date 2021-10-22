@@ -1,11 +1,11 @@
 <?php
    require 'init_db.php';
    $db = new SQLite3('./basdat.db');
-   // if(!$db) {
-   //      echo $db->lastErrorMsg();
-   //   } else {
-   //      echo "Opened database successfully\n";
-   // }
+   if(!$db) {
+        echo $db->lastErrorMsg();
+     } else {
+        echo "Opened database successfully\n";
+   }
 
    # insert to users table
 
@@ -19,9 +19,9 @@
     foreach($sql as $que){
         $ret = $db->exec($que);
         if(!$ret){
-            // echo $db->lastErrorMsg();
+            echo $db->lastErrorMsg();
          } else {
-            // echo "users Table updated successfully\n";
+            echo "users Table updated successfully\n";
          }
     }
 
@@ -65,9 +65,9 @@
    foreach($sql as $que){
       $ret = $db->exec($que);
       if(!$ret){
-         //  echo $db->lastErrorMsg();
+         echo $db->lastErrorMsg();
        } else {
-         //  echo "users dorayaki updated successfully\n";
+         echo "users dorayaki updated successfully\n";
        }
    }
 
@@ -86,11 +86,11 @@
 
    foreach($sql as $que){
       $ret = $db->exec($que);
-      // if(!$ret){
-      //     echo $db->lastErrorMsg();
-      //  } else {
-      //     echo "users transactions updated successfully\n";
-      //  }
+      if(!$ret){
+          echo $db->lastErrorMsg();
+       } else {
+          echo "users transactions updated successfully\n";
+       }
    }
 
 
