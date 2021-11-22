@@ -41,6 +41,14 @@
    } else {
       echo "token Table deleted successfully\n";
    }
+   $sql ="DROP TABLE IF EXISTS request";
+
+    $ret = $db->exec($sql);
+    if(!$ret){
+      echo $db->lastErrorMsg();
+   } else {
+      echo "request Table deleted successfully\n";
+   }
 
     $sql ="
         CREATE TABLE users(
@@ -113,6 +121,22 @@
     echo "token Table created successfully\n";
   }
 
+  $sql ="
+  CREATE TABLE request(
+      request_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      id_dorayaki INTEGER,
+      qty INTEGER NOT NULL,
+      status VARCHAR(100) NOT NULL,
+      trans_time DATETIME NOT NULL,
+      FOREIGN KEY (id_dorayaki) REFERENCES dorayaki(id_dorayaki)
+  )";
+
+$ret = $db->exec($sql);
+if(!$ret){
+  echo $db->lastErrorMsg();
+} else {
+  echo "transactions Table created successfully\n";
+}
 
      $db->close();
      // Nanti tambahin tabel lain

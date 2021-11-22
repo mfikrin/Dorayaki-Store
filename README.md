@@ -52,13 +52,13 @@ Fitur-fitur yang tersedia meliputi :
 
 
 ## Perubahan Pada Tugas Besar 2
-- Menghilangkan Halaman Add Dorayaki -> Menggantinya dengan halaman Update, berguna untuk melakukan     
+- Menghilangkan Halaman Add Dorayaki -> Menggantinya dengan fungsi Update pada navbar, berguna untuk melakukan     
   fetch terhadap data nama dorayaki melalui protokol SOAP pada Java Servlet
 - Pada halaman edit dorayaki untuk setiap dorayaki tidak dapat melakukan perubahan nama dan stok  
   dorayaki, hanya dapat mengedit harga, deskripsi, dan gambar
 - Untuk menambah dan mengurangi stok dorayaki pada halaman edit_amount dilakukan request perubahan stok 
   lewat protokol SOAP pada Java Servlet (submitChangeSOAP pada util/item_util.php) 
-- Menambahkan halaman yang isinya pending request perubahan stok dorayaki
+- Menambahkan halaman yang isinya pending request perubahan stok dorayaki dan melakukan sinkronisasi request dengan SOAP
 
 ## Pembagian Tugas
 ### Server-side

@@ -60,7 +60,7 @@
             ;
             echo '<div><div class="inFlex"><a href="../pages/details.php?id_dorayaki='. $id . '"><button class="butmit" type="button" id="canBut">Cancel</button></a>';
             echo '<button class="butmit" name="buyItem" id="subBut" type="submit">Commit Above Changes</button></div></div>';
-            submitChange();
+            submitChangeSOAP();
             echo '</form>';
         }
     }
@@ -243,6 +243,9 @@
                 catch(SoapFault $e){
                     echo $e->getMessage();
                 }
+                $sts = 'pending';
+                $query = "INSERT INTO `request` (id_dorayaki,qty,status,trans_time) VALUES ('$id','$added','$sts','$dt')";
+                $exc = $db->exec($query);
                 // $price = 0;
                 // $sql = "UPDATE dorayaki SET amount = amount + $added WHERE id_dorayaki = $id";
                 // $res = $db->exec($sql);
@@ -255,7 +258,7 @@
                 // $stmt->bindParam(":dt",$dt);
                 // $stmt->execute();
                 $db->close();
-                // echo '<span style="color:#33b864;">Success. Stock Updated</span>';
+                echo '<span style="color:#33b864;">Request Sent.</span>';
             }
         }
     }

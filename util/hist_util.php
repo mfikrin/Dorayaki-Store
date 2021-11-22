@@ -162,4 +162,46 @@ function prodTable($id){
     }
 }
 
+function reqTable(){
+    $db = new SQLite3('../db/basdat.db');
+    $sql = "SELECT d.nama,r.qty,r.status,r.trans_time FROM dorayaki as d,request as r where d.id_dorayaki = r.id_dorayaki";
+    $trans = [];
+    $stmt = $db->prepare($sql);
+    $results = $stmt->execute();
+    while ($res = $results->fetchArray(1)) {
+        array_push($trans, $res);
+    }
+    if(empty($trans)){
+        echo '<div class="histitle">
+        <h5>No Request Recorded.</h5>
+    </div>';
+    }
+    else{
+        echo "<table>
+        <tr>
+            <th>Dorayaki Name</th>
+            <th>Request Amount</th>
+            <th>Status</th>
+            <th>Date Time</th>
+        </tr>";
+        foreach($trans as $ts){
+            $tp = $ts["status"];
+            $nm = $ts["nama"];
+            $amn = $ts["qty"];
+            $date = date_create($ts["trans_time"]);
+            $dtime = date_format($date,"d M Y H:i:s"); 
+            echo "<tr>
+            <td>$nm</td>
+            <td>$amn</td>
+            <td>$tp</td>
+            <td>$dtime</td>
+          </tr>";
+        }
+        echo "</table>";
+        echo '<div class="histitle">
+        <h5><a href="../pages/sync.php">---- Synchronize Requests ----</a></h5>
+    </div>';
+    }
+}
+
 ?>
