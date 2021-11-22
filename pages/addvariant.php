@@ -1,3 +1,5 @@
+<!-- NOT USED -->
+
 <?php
 session_start();
 require '../util/loginAuth.php';

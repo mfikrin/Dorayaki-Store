@@ -1,7 +1,7 @@
 <?php
     function checkAdmin(){
         if ($_SESSION['is_admin']) {
-            echo '<li><a href="../pages/addvariant.php" class="barlink">Add</a></li>';
+            echo '<li><a href="../pages/update.php" class="barlink">Update</a></li>';
             echo '<li><a href="../pages/history.php" class="barlink">History</a></li>';
         } else if (!$_SESSION['is_admin']) {
             echo '<li><a href="../pages/history.php" class="barlink">Purchase History</a></li>';

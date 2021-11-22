@@ -46,11 +46,11 @@ include('../util/item_util.php')?>
             <div class="adderform">
                 <h2>Edit Dorayaki Variant</h2>
                 <label>Name</label>
-                <input class="textinput" value="<?php echo $item_info[0]["nama"];?>" name="addname" required>
+                <input class="textinput" value="<?php echo $item_info[0]["nama"];?>" name="addname" readonly required>
                 <label>Price</label>
                 <input class="textinput" type="number" min="0" style="-moz-appearance:textfield;" value="<?php echo $item_info[0]["price"];?>" name="addprice" required>
                 <label>Initial Amount</label>
-                <input class="textinput" type="number" min="0" style="-moz-appearance:textfield;" value="<?php echo $item_info[0]["amount"];?>" name="initstock" required>
+                <input class="textinput" type="number" min="0" style="-moz-appearance:textfield;" value="<?php echo $item_info[0]["amount"];?>" name="initstock" readonly required>
                 <label>Description</label>
                 <textarea class="textinput" rows="5" cols="30" placeholder="<?php echo $item_info[0]["description"];?>" name="adddesc" style="resize:none;overflow:hidden" required></textarea>
                 <label>Image</label>

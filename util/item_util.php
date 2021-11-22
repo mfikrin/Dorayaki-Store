@@ -129,7 +129,7 @@
         }
     }
 
-    function submitChange(){
+    function submitChange(){ //deprecated
         if(isset($_POST['buyItem']) and isset($_POST['qty'])){
             $id = $_GET['id_dorayaki'];
             $db = new SQLite3('../db/basdat.db');
@@ -159,7 +159,6 @@
             }
         }
     }
-
     function submitImg($isNew){
         if (isset($_POST['AddVar'])) {
             $name = $_POST['addname'];
@@ -219,6 +218,44 @@
                     }
                 }
                 
+            }
+        }
+    }
+
+    function submitChangeSOAP(){
+        if(isset($_POST['buyItem']) and isset($_POST['qty'])){
+            $id = $_GET['id_dorayaki'];
+            $db = new SQLite3('../db/basdat.db');
+            $uname = $_SESSION['usernameEmail'];
+            $added = $_POST['qty']; 
+            $iteminfo = getItem($id);
+            if($iteminfo[0]['amount'] + $added < 0){
+                $db->close();
+                echo '<span style="color:#C4161C;">Final Amount Cannot be Negative</span>';
+            }
+            else{
+                date_default_timezone_set('Asia/Jakarta');
+                $dt = date("Y-m-d h:i:sa");
+                try{
+                    $client = new SoapClient("http://localhost:8080/DoraSupp/ws/req?wsdl");
+                    $resp = $client->insertRequest($id,$added,"http://localhost:8000",$dt,"request");
+                }
+                catch(SoapFault $e){
+                    echo $e->getMessage();
+                }
+                // $price = 0;
+                // $sql = "UPDATE dorayaki SET amount = amount + $added WHERE id_dorayaki = $id";
+                // $res = $db->exec($sql);
+                // $sql2 = "INSERT INTO `transactions`(username,id_dorayaki,total_buy,total_price,trans_time)  VALUES (:uname,:idora,:remov,:prc,:dt);";
+                // $stmt = $db->prepare($sql2);
+                // $stmt->bindParam(":uname",$uname);
+                // $stmt->bindParam(":idora",$id);
+                // $stmt->bindParam(":remov",$added);
+                // $stmt->bindParam(":prc",$price);
+                // $stmt->bindParam(":dt",$dt);
+                // $stmt->execute();
+                $db->close();
+                // echo '<span style="color:#33b864;">Success. Stock Updated</span>';
             }
         }
     }

@@ -48,6 +48,17 @@ Fitur-fitur yang tersedia meliputi :
 - Transaction History ![History](./screenshots/history-admin.png)
 - Product Specific History ![ProHist](./screenshots/prospec-hist.png)
 - Search Result ![Search](./screenshots/search-result.png)
+- Perubahan Tubes2 : dashboard admin ![Dasubodo](./screenshots/dasubodo.png)
+
+
+## Perubahan Pada Tugas Besar 2
+- Menghilangkan Halaman Add Dorayaki -> Menggantinya dengan halaman Update, berguna untuk melakukan     
+  fetch terhadap data nama dorayaki melalui protokol SOAP pada Java Servlet
+- Pada halaman edit dorayaki untuk setiap dorayaki tidak dapat melakukan perubahan nama dan stok  
+  dorayaki, hanya dapat mengedit harga, deskripsi, dan gambar
+- Untuk menambah dan mengurangi stok dorayaki pada halaman edit_amount dilakukan request perubahan stok 
+  lewat protokol SOAP pada Java Servlet (submitChangeSOAP pada util/item_util.php) 
+- Menambahkan halaman yang isinya pending request perubahan stok dorayaki
 
 ## Pembagian Tugas
 ### Server-side
@@ -60,7 +71,8 @@ Fitur-fitur yang tersedia meliputi :
 - Pengubahan stok/Pembelian dorayaki : 13519018
 - Data Expire Time : 13519091
 - Docker : -
-- Halaman Riwayat Pengubahan stok/Pembelian dorayaki : 13519018 
+- Halaman Riwayat Pengubahan stok/Pembelian dorayaki : 13519018
+- Halaman Update : 13519018 
 
 
 ### Client-side
@@ -73,3 +85,4 @@ Fitur-fitur yang tersedia meliputi :
 - Pengubahan stok/Pembelian dorayaki : 13519018
 - Responsive design : 13519018, 13519069, 13519091
 - Halaman Riwayat Pengubahan stok/Pembelian dorayaki : 13519018
+- Halaman Update : 13519018 
