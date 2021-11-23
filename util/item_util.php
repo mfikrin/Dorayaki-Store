@@ -76,15 +76,15 @@
 
     function getAmountSold($itemid){
         $db = new SQLite3('../db/basdat.db');
-        $sql = "SELECT id_dorayaki from transactions WHERE id_dorayaki = $itemid";
+        $sql = "SELECT sum(total_buy) as countsold from transactions WHERE id_dorayaki = $itemid AND total_price > 0 GROUP BY id_dorayaki";
         $transaction = [];
         $results = $db->query($sql);
         while ($res = $results->fetchArray(1)) {
             array_push($transaction, $res);
         }
         $db->close();
-        $sold = count($transaction);
-        return $sold;
+        if(count($transaction) > 0) {return $transaction[0]["countsold"];}
+        return 0;
 
     }
 
@@ -111,7 +111,7 @@
             }
             else{
                 date_default_timezone_set('Asia/Jakarta');
-                $dt = date("Y-m-d h:i:sa");
+                $dt = date("Y-m-d H:i:s");
                 $price = $iteminfo[0]["price"] * $removed;
                 $sql = "UPDATE dorayaki SET amount = amount - $removed WHERE id_dorayaki = $id";
                 $res = $db->exec($sql);
@@ -142,7 +142,7 @@
             }
             else{
                 date_default_timezone_set('Asia/Jakarta');
-                $dt = date("Y-m-d h:i:sa");
+                $dt = date("Y-m-d H:i:s");
                 $price = 0;
                 $sql = "UPDATE dorayaki SET amount = amount + $added WHERE id_dorayaki = $id";
                 $res = $db->exec($sql);
@@ -229,16 +229,17 @@
             $uname = $_SESSION['usernameEmail'];
             $added = $_POST['qty']; 
             $iteminfo = getItem($id);
+            $namae = $iteminfo[0]['nama'];
             if($iteminfo[0]['amount'] + $added < 0){
                 $db->close();
                 echo '<span style="color:#C4161C;">Final Amount Cannot be Negative</span>';
             }
             else{
                 date_default_timezone_set('Asia/Jakarta');
-                $dt = date("Y-m-d h:i:sa");
+                $dt = date("Y-m-d H:i:s");
                 try{
                     $client = new SoapClient("http://localhost:8080/DoraSupp/ws/req?wsdl");
-                    $resp = $client->insertRequest($id,$added,"http://localhost:8000",$dt,"request");
+                    $resp = $client->insertRequest($namae,$added,"http://localhost:8000",$dt,"request");
                 }
                 catch(SoapFault $e){
                     echo $e->getMessage();

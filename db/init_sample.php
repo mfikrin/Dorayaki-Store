@@ -27,33 +27,33 @@
 
     # insert to dorayaki table
 
-    $sql =[
-      "INSERT INTO `dorayaki` VALUES (0, 'Dorayaki Placeholder', 20000, 50, 'Pandannya Wangy!', 'img/dorapandan.jpg');",
-   ];
+   //  $sql =[
+   //    "INSERT INTO `dorayaki` VALUES (0, 'Dorayaki Placeholder', 20000, 50, 'Pandannya Wangy!', 'img/dorapandan.jpg');",
+   // ];
 
-   foreach($sql as $que){
-      $ret = $db->exec($que);
-      if(!$ret){
-         echo $db->lastErrorMsg();
-       } else {
-         echo "users dorayaki updated successfully\n";
-       }
-   }
+   // foreach($sql as $que){
+   //    $ret = $db->exec($que);
+   //    if(!$ret){
+   //       echo $db->lastErrorMsg();
+   //     } else {
+   //       echo "users dorayaki updated successfully\n";
+   //     }
+   // }
 
-   # insert to transactions table
+   // # insert to transactions table
 
-   $sql =[
-      "INSERT INTO `transactions` VALUES (0, 'shev', 0, 2,40000,'2021-01-01 10:00:00');",
-   ];
+   // $sql =[
+   //    "INSERT INTO `transactions` VALUES (0, 'shev', 0, 2,40000,'2021-01-01 10:00:00');",
+   // ];
 
-   foreach($sql as $que){
-      $ret = $db->exec($que);
-      if(!$ret){
-          echo $db->lastErrorMsg();
-       } else {
-          echo "users transactions updated successfully\n";
-       }
-   }
+   // foreach($sql as $que){
+   //    $ret = $db->exec($que);
+   //    if(!$ret){
+   //        echo $db->lastErrorMsg();
+   //     } else {
+   //        echo "users transactions updated successfully\n";
+   //     }
+   // }
 
 
    function select_all($table_name,$db){

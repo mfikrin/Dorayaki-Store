@@ -164,7 +164,7 @@ function prodTable($id){
 
 function reqTable(){
     $db = new SQLite3('../db/basdat.db');
-    $sql = "SELECT d.nama,r.qty,r.status,r.trans_time FROM dorayaki as d,request as r where d.id_dorayaki = r.id_dorayaki";
+    $sql = "SELECT d.nama,r.qty,r.status,r.trans_time FROM dorayaki as d,request as r where d.id_dorayaki = r.id_dorayaki AND r.status ='pending'";
     $trans = [];
     $stmt = $db->prepare($sql);
     $results = $stmt->execute();

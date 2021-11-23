@@ -15,10 +15,25 @@ include('../util/item_util.php')?>
     $desc = 'Pandannya Wangy!';
     $img = 'img/dorapandan.jpg';
     foreach($resp as $r){
-        foreach($r as $item){
-            $sql = "INSERT INTO `dorayaki`(nama,price,amount,description,img_source) VALUES ('$item',0,0,'$desc','$img');";
+        if(gettype($r)=='string'){
+            $sql = "INSERT INTO `dorayaki`(nama,price,amount,description,img_source) VALUES ('$r',0,0,'$desc','$img');";
             $exc = $db->exec($sql);
+        }
+        else{
+            foreach($r as $item){
+                $sql = "INSERT INTO `dorayaki`(nama,price,amount,description,img_source) VALUES ('$item',0,0,'$desc','$img');";
+                $exc = $db->exec($sql);
+            }
         }
     }
     header("Location: dashboard.php");
+
+    // foreach($resp as $r){
+    //     foreach($r as $item){
+    //         $sql = "INSERT INTO `dorayaki`(nama,price,amount,description,img_source) VALUES ('$item',0,0,'$desc','$img');";
+    //         $exc = $db->exec($sql);
+    //     }
+    // }
+    // header("Location: dashboard.php");
+    
 ?>
