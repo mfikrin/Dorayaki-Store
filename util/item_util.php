@@ -237,13 +237,14 @@
             else{
                 date_default_timezone_set('Asia/Jakarta');
                 $dt = date("Y-m-d H:i:s");
+                $activeness = 1;
                 try{
                     $actual_link = "http://$_SERVER[HTTP_HOST]";
                     $client = new SoapClient("http://localhost:8080/DoraSupp/ws/req?wsdl");
                     $resp = $client->insertRequest($namae,$added,$actual_link,$dt,"request");
                     if($resp == 1){
                         $sts = 'pending';
-                        $query = "INSERT INTO `request` (id_dorayaki,qty,status,trans_time) VALUES ('$id','$added','$sts','$dt')";
+                        $query = "INSERT INTO `request` (id_dorayaki,qty,status,trans_time,acv) VALUES ('$id','$added','$sts','$dt','$activeness')";
                         $exc = $db->exec($query);
                         $db->close();
                         echo '<span style="color:#33b864;">Request Sent.</span>';

@@ -13,7 +13,7 @@ include('../util/item_util.php')?>
     $client = new SoapClient("http://localhost:8080/DoraSupp/ws/req?wsdl");
     $resp = $client->getStatus($actual_link);
     $db = new SQLite3('../db/basdat.db');
-    $sql = "SELECT r.trans_time FROM dorayaki as d,request as r where d.id_dorayaki = r.id_dorayaki AND r.status ='pending'";
+    // $sql = "SELECT r.trans_time FROM dorayaki as d,request as r where d.id_dorayaki = r.id_dorayaki AND r.status ='pending'";
     $trans = [];
     $defname = "admin";
     foreach($resp as $r){
@@ -22,7 +22,7 @@ include('../util/item_util.php')?>
                 if($s[1] == "accepted" or $s[1]=="rejected"){
                     $tu = $s[0];
                     $tv = $s[1];
-                    $q1 ="SELECT r.id_dorayaki as id,r.qty as qty,d.price*r.qty as prc FROM `dorayaki` as d,`request` as r WHERE d.id_dorayaki = r.id_dorayaki AND r.trans_time ='$tu'";
+                    $q1 ="SELECT r.id_dorayaki as id,r.qty as qty,d.price*r.qty as prc,r.acv FROM `dorayaki` as d,`request` as r WHERE d.id_dorayaki = r.id_dorayaki AND r.trans_time ='$tu'";
                     $req = [];
                     $r1 = $db->query($q1);
                     while ($rez = $r1->fetchArray(1)) {
@@ -31,9 +31,11 @@ include('../util/item_util.php')?>
                     $idr = $req[0]["id"];
                     $qt = $req[0]["qty"];
                     $tpc = $req[0]["prc"];
-                    $q2 = "UPDATE `request` SET status='$tv' WHERE trans_time='$tu'";
+                    $acv = $req[0]["acv"];
+                    $bl = 0;
+                    $q2 = "UPDATE `request` SET status='$tv',acv='$bl' WHERE trans_time='$tu'";
                     $r2 = $db->exec($q2);
-                    if($s[1] == "accepted"){
+                    if($tv == "accepted" and $acv == 1){
                         $q5 = "UPDATE `dorayaki` SET amount = amount + '$qt' WHERE id_dorayaki = '$idr'";
                         $r5 = $db->exec($q5);
                         date_default_timezone_set('Asia/Jakarta');
@@ -48,7 +50,7 @@ include('../util/item_util.php')?>
                     if($t[1] == "accepted" or $t[1]=="rejected"){
                         $tu = $t[0];
                         $tv = $t[1];
-                        $q1 ="SELECT r.id_dorayaki as id,r.qty as qty,d.price*r.qty as prc FROM `dorayaki` as d,`request` as r WHERE d.id_dorayaki = r.id_dorayaki AND r.trans_time ='$tu'";
+                        $q1 ="SELECT r.id_dorayaki as id,r.qty as qty,d.price*r.qty as prc,r.acv FROM `dorayaki` as d,`request` as r WHERE d.id_dorayaki = r.id_dorayaki AND r.trans_time ='$tu'";
                         $req = [];
                         $r1 = $db->query($q1);
                         while ($rez = $r1->fetchArray(1)) {
@@ -57,9 +59,11 @@ include('../util/item_util.php')?>
                         $idr = $req[0]["id"];
                         $qt = $req[0]["qty"];
                         $tpc = $req[0]["prc"];
-                        $q2 = "UPDATE `request` SET status='$tv' WHERE trans_time='$tu'";
+                        $acv = $req[0]["acv"];
+                        $bl = 0;
+                        $q2 = "UPDATE `request` SET status='$tv',acv='$bl' WHERE trans_time='$tu'";
                         $r2 = $db->exec($q2);
-                        if($t[1] == "accepted"){
+                        if($tv == "accepted" and $acv==1){
                             $q5 = "UPDATE `dorayaki` SET amount = amount + '$qt' WHERE id_dorayaki = '$idr'";
                             $r5 = $db->exec($q5);
                             date_default_timezone_set('Asia/Jakarta');

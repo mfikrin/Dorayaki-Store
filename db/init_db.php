@@ -128,6 +128,7 @@
       qty INTEGER NOT NULL,
       status VARCHAR(100) NOT NULL,
       trans_time DATETIME NOT NULL,
+      acv INTEGER NOT NULL,
       FOREIGN KEY (id_dorayaki) REFERENCES dorayaki(id_dorayaki)
   )";
 
