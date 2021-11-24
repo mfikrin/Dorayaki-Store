@@ -12,14 +12,14 @@ include('../util/hist_util.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/history.css">
     <script src=""></script>
-    <title>Pending Requests</title>
+    <title>Request History</title>
 </head>
 
 <body>
     <?php include('../util/header.php'); ?>
     <div class="container">
         <div class="histitle">
-            <h2>Pending Requests</h2>
+            <h2>All Request(s) Made</h2>
         </div>
             <?php reqTable();?>
     </div>

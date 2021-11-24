@@ -8,9 +8,10 @@ include('../util/item_util.php')?>
 <!-- Validation Soon -->
 <!-- Dorayaki Variant Updater (fromSOAP)-->
 
-<?php 
+<?php
+    $actual_link = "http://$_SERVER[HTTP_HOST]";
     $client = new SoapClient("http://localhost:8080/DoraSupp/ws/req?wsdl");
-    $resp = $client->getStatus("http://localhost:8000");
+    $resp = $client->getStatus($actual_link);
     $db = new SQLite3('../db/basdat.db');
     $sql = "SELECT r.trans_time FROM dorayaki as d,request as r where d.id_dorayaki = r.id_dorayaki AND r.status ='pending'";
     $trans = [];
@@ -32,7 +33,7 @@ include('../util/item_util.php')?>
                     $tpc = $req[0]["prc"];
                     $q2 = "UPDATE `request` SET status='$tv' WHERE trans_time='$tu'";
                     $r2 = $db->exec($q2);
-                    if($t[1] == "accepted"){
+                    if($s[1] == "accepted"){
                         $q5 = "UPDATE `dorayaki` SET amount = amount + '$qt' WHERE id_dorayaki = '$idr'";
                         $r5 = $db->exec($q5);
                         date_default_timezone_set('Asia/Jakarta');

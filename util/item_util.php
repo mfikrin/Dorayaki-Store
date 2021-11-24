@@ -238,15 +238,23 @@
                 date_default_timezone_set('Asia/Jakarta');
                 $dt = date("Y-m-d H:i:s");
                 try{
+                    $actual_link = "http://$_SERVER[HTTP_HOST]";
                     $client = new SoapClient("http://localhost:8080/DoraSupp/ws/req?wsdl");
-                    $resp = $client->insertRequest($namae,$added,"http://localhost:8000",$dt,"request");
+                    $resp = $client->insertRequest($namae,$added,$actual_link,$dt,"request");
+                    if($resp == 1){
+                        $sts = 'pending';
+                        $query = "INSERT INTO `request` (id_dorayaki,qty,status,trans_time) VALUES ('$id','$added','$sts','$dt')";
+                        $exc = $db->exec($query);
+                        $db->close();
+                        echo '<span style="color:#33b864;">Request Sent.</span>';
+                    }
+                    else{
+                        echo '<span style="color:#C4161C;">Request Not Sent. Try Again Later.</span>';
+                    }
                 }
                 catch(SoapFault $e){
                     echo $e->getMessage();
                 }
-                $sts = 'pending';
-                $query = "INSERT INTO `request` (id_dorayaki,qty,status,trans_time) VALUES ('$id','$added','$sts','$dt')";
-                $exc = $db->exec($query);
                 // $price = 0;
                 // $sql = "UPDATE dorayaki SET amount = amount + $added WHERE id_dorayaki = $id";
                 // $res = $db->exec($sql);
@@ -258,8 +266,6 @@
                 // $stmt->bindParam(":prc",$price);
                 // $stmt->bindParam(":dt",$dt);
                 // $stmt->execute();
-                $db->close();
-                echo '<span style="color:#33b864;">Request Sent.</span>';
             }
         }
     }
