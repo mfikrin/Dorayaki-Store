@@ -26,7 +26,7 @@ include('../util/item_util.php');?>
     }
     if($found){
         $db = new SQLite3('../db/basdat.db');
-        $sql = "DELETE FROM dorayaki WHERE id_dorayaki = $dora_id;";
+        $sql = "UPDATE `dorayaki` SET price = 0, amount = 0 WHERE id_dorayaki = '$dora_id';";
         $db->exec($sql);
         $db->close();
     }

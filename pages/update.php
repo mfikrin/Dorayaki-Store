@@ -8,9 +8,10 @@ include('../util/item_util.php')?>
 <!-- Validation Soon -->
 <!-- Dorayaki Variant Updater (fromSOAP)-->
 
-<?php 
+<?php
+    $actual_link = "http://$_SERVER[HTTP_HOST]";
     $client = new SoapClient("http://localhost:8080/DoraSupp/ws/dora?wsdl");
-    $resp = $client->getDorayaki();
+    $resp = $client->getDorayaki($actual_link);
     $db = new SQLite3('../db/basdat.db');
     $desc = 'Pandannya Wangy!';
     $img = 'img/dorapandan.jpg';
